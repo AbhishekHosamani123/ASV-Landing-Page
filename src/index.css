@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500&display=swap');
+
+/* Inter Display: the reference body font (self-hosted by the reference site).
+   bHYNJqzTyl… is the latin regular cut (matches reference text metrics). */
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://framerusercontent.com/assets/bHYNJqzTyl2lqvmMiRRS6Y16Es.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://framerusercontent.com/assets/iwWTDc49ENF2tCHbqlNARXw6Ug.woff2') format('woff2');
+}
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #faf7ef;
+  --color-cream-2: #f4efe1;
+  --color-ink: #0b0b0b;
+  --color-ink-2: #0b282e;
+  --color-teal: #1e7280;
+  --color-teal-2: #1a616d;
+  --color-blue: #0099ff;
+  --color-gray-1: #605f5f;
+  --color-gray-2: #363636;
+  --color-gray-3: #c9dde1;
+  --color-sky: #ecf6f8;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Inter Display', 'Inter', sans-serif;
+  /* Reference Framer breakpoints: tablet 810px, desktop 1200px */
+  --breakpoint-tb: 810px;
+  --breakpoint-dt: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(30, 114, 128, 0.2);
+}
+
+/* Roll text effect for buttons (matches Framer Button hover):
+   duplicate label sits below; on group-hover the strip slides up 22px */
+.roll-text {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .roll-text {
+  transform: translateY(-22px);
+}
+
+/* Hide scrollbar for marquee rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
