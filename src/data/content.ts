@@ -1,100 +1,198 @@
+import institutionIcon from '../assets/institution.png'
+import listenImg from '../assets/listen.png'
+import understandImg from '../assets/understand.png'
+import validateImg from '../assets/validate.png'
+import improveImg from '../assets/improve.png'
+import evolveImg from '../assets/evolve.png'
+
 /** All content extracted verbatim from https://zono.framer.ai/ */
 
-export const SESSIONS = [
+export interface SessionPoint {
+  iconType: string
+  text: string
+}
+
+export interface SessionItem {
+  number?: string
+  icon?: string
+  title: string
+  desc: string
+  points?: SessionPoint[]
+  date?: string
+  time?: string
+  duration?: string
+  platform?: string
+  price?: string
+  cta: string
+}
+
+export const SESSIONS: SessionItem[] = [
   {
-    icon: 'https://framerusercontent.com/images/ZUs3UcVzORGfUFRnr322bDDhCAQ.png?scale-down-to=512',
-    title: 'Weekday',
-    desc: 'Perfect for students & house wife’s.',
-    date: '02nd Feb 2026',
-    time: '5:00pm - 7:00pm (IST)',
-    duration: '3 Hours (Live)',
-    platform: 'Zoom (Link shared after booking)',
-    price: '$15',
-    cta: 'Join the Weekday Batch',
+    icon: institutionIcon,
+    title: 'Institutions',
+    desc: 'Strengthen institutional readiness with evidence.',
+    points: [
+      {
+        iconType: 'assessment',
+        text: 'Identify strengths and gaps.',
+      },
+      {
+        iconType: 'insights',
+        text: 'Turn evidence into insights.',
+      },
+      {
+        iconType: 'improvement',
+        text: 'Set practical improvement priorities.',
+      },
+      {
+        iconType: 'outcomes',
+        text: 'Track progress over time.',
+      },
+    ],
+    cta: 'Explore →',
   },
   {
     icon: 'https://framerusercontent.com/images/GxKmStLwQDP1gh9H4bTVD5y218.png?scale-down-to=512',
-    title: 'Weekdays',
-    desc: 'Perfect for buys professionals & entrepreneurs.',
-    date: '08th Feb 2026',
-    time: '9:00am - 12:00pm (IST)',
-    duration: '3 Hours (Live)',
-    platform: 'Zoom (Link shared after booking)',
-    price: '$15',
-    cta: 'Join the Weekend Spot',
+    title: 'Learners',
+    desc: 'Build skills and demonstrate career readiness.',
+    points: [
+      {
+        iconType: 'readiness',
+        text: 'Understand readiness and gaps.',
+      },
+      {
+        iconType: 'skills',
+        text: 'Build relevant skills.',
+      },
+      {
+        iconType: 'capabilities',
+        text: 'Develop practical capabilities.',
+      },
+      {
+        iconType: 'evidence',
+        text: 'Submit verified evidence.',
+      },
+    ],
+    cta: 'Explore →',
   },
-] as const
+  {
+    icon: 'https://framerusercontent.com/images/ZUs3UcVzORGfUFRnr322bDDhCAQ.png?scale-down-to=512',
+    title: 'Employers & Partners',
+    desc: 'Connect industry expectations with graduate readiness.',
+    points: [
+      {
+        iconType: 'expectations',
+        text: 'Share workplace expectations.',
+      },
+      {
+        iconType: 'insights',
+        text: 'Provide industry insights.',
+      },
+      {
+        iconType: 'exposure',
+        text: 'Create meaningful exposure.',
+      },
+      {
+        iconType: 'talent',
+        text: 'Engage with prepared talent.',
+      },
+    ],
+    cta: 'Explore →',
+  },
+]
 
-export const LEARN_ITEMS = [
-  {
-    img: 'https://framerusercontent.com/images/4DyP7dGycGNolBY8T272aJfT64.png?scale-down-to=1024',
-    variant: 'image',
-    title: 'Finding your niche with AI',
-    desc: 'Use AI tools to research and validate profitable coaching niches.',
-  },
-  {
-    img: null,
-    bg: '#e9f1f2',
-    variant: 'pattern',
-    title: 'Building funnels without code',
-    desc: 'Create automated sales funnels using AI and no-code tools.',
-  },
-  {
-    img: 'https://framerusercontent.com/images/xYx1fs8Jisc7NmOLbPJb2K1Aww.jpg?scale-down-to=1024',
-    variant: 'image',
-    title: 'Content creation on autopilot',
-    desc: 'Generate emails, posts, and landing pages with AI in minutes.',
-  },
-  {
-    img: null,
-    bg: '#e7f3e7',
-    variant: 'pattern',
-    title: 'Scaling to ₹1 Cr systems',
-    desc: 'Discover how to grow sustainably with systems, not hustle.',
-  },
-] as const
+export interface LearnItem {
+  img?: string | null
+  bg?: string
+  variant: 'image' | 'pattern'
+  title: string
+  desc: string
+  titleColor?: string
+}
 
-export const STATS = [
+export const LEARN_ITEMS: LearnItem[] = [
   {
-    value: 2500,
-    suffix: '+',
-    label: 'Members trained',
+    img: listenImg,
+    variant: 'image',
+    title: 'Listen',
+    desc: 'Engage leadership, faculty, students, employers and support teams.',
+  },
+  {
+    img: understandImg,
+    variant: 'image',
+    title: 'Understand',
+    desc: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
+  },
+  {
+    img: validateImg,
+    variant: 'image',
+    title: 'Validate',
+    desc: 'Cross-check findings with available institutional evidence and context.',
+    titleColor: '#ffffff',
+  },
+  {
+    img: improveImg,
+    variant: 'image',
+    title: 'Improve',
+    desc: 'Translate insights into focused, practical institutional priorities.',
+    titleColor: '#000000',
+  },
+  {
+    img: evolveImg,
+    variant: 'image',
+    title: 'Evolve',
+    desc: 'Review progress, learn continuously and strengthen the system over time.',
+  },
+]
+
+export interface StatItem {
+  value: number
+  suffix: string
+  label: string
+  icon: string
+}
+
+export const STATS: StatItem[] = [
+  {
+    value: 16,
+    suffix: ' Weeks',
+    label: 'Structured programme',
     icon: 'https://framerusercontent.com/images/wL3gFGdvFKnBDEAtALgd21nxY.png',
   },
   {
-    value: 150,
+    value: 5,
     suffix: '+',
-    label: '5 Star reviews',
+    label: 'Areas of employability development',
     icon: 'https://framerusercontent.com/images/KFODyDPMf85CInVsmz95yO4c.png',
   },
   {
-    value: 30,
-    suffix: '+',
-    label: 'Sessions Hosted',
+    value: 100,
+    suffix: '%',
+    label: 'Skills-focused learning',
     icon: 'https://framerusercontent.com/images/pkRgS6EqUrjkbv3C1CJ7RRwj4.png',
   },
   {
-    value: 18,
-    suffix: 'K',
-    label: 'Active members',
+    value: 1,
+    suffix: '',
+    label: 'Standard AERS framework',
     icon: 'https://framerusercontent.com/images/s31aqBKTKv0nAkB6APEyx26maY.png',
   },
-] as const
+]
 
 export const ZONO_FEATURES = [
-  '3-hour structured masterclass',
-  'Personalized insights & action plan',
-  'Ongoing reminders & accountability',
-  'Practical tools you can use today',
-  'High-quality guidance with real support',
+  '16-week structured employability programme',
+  'Structured assessments & personalised development',
+  'Continuous practice, feedback & progress tracking',
+  'Practical skills for the workplace',
+  'Expert guidance, mentoring & real-world support',
 ] as const
 
 export const OTHER_FEATURES = [
-  'No clear learning path',
-  'Limited goal understanding',
-  'No follow-up or roadmap',
-  'Generic, unstructured advice',
-  'Little to no real support',
+  'Fragmented preparation without a structured journey',
+  'Limited understanding of individual readiness',
+  'Little ongoing tracking or development roadmap',
+  'One-size-fits-all placement preparation',
+  'Limited personalised guidance and feedback',
 ] as const
 
 export const WHY_FEATURES = [

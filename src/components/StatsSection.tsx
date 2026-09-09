@@ -50,16 +50,15 @@ export function StatsSection() {
         <div className="flex flex-col items-center gap-4 text-center">
           <Reveal delay={0.1}>
             <SectionHeading>
-              Our impact is <span className="text-teal">growing</span> every month
+              Building the Future of Employment Readiness
             </SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>
             <p
-              className="max-w-[600px] text-gray-1"
+              className="max-w-[720px] text-gray-1"
               style={{ fontSize: '20px', lineHeight: '28px', letterSpacing: '-0.4px', fontWeight: 500 }}
             >
-              We continuously refine our systems to help more coaches launch,
-              grow, and scale with AI.
+              AERS is designed to equip students with the skills, confidence, and practical experience they need to become workplace-ready.
             </p>
           </Reveal>
         </div>
@@ -68,7 +67,7 @@ export function StatsSection() {
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              className="flex flex-col justify-start gap-4 rounded-2xl bg-cream-2 p-5 pt-7 dt:h-[213px] tb:h-[213px]"
+              className="flex flex-col justify-start gap-4 rounded-2xl bg-cream-2 p-5 pt-7 min-h-[220px] h-full"
               initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '0px 0px -10% 0px' }}

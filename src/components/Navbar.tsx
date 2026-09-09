@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { EASE } from './shared/Reveal'
+import asvLogo from '../assets/asv-logo.png'
 
 const NAV_LINKS = [
-  { label: 'About me', href: '#about-coach' },
+  { label: 'About', href: '#about-coach' },
   { label: 'Why Us', href: '#why-choose' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Learn', href: '#learn' },
@@ -11,7 +12,7 @@ const NAV_LINKS = [
 
 /**
  * Reference navbar: fixed top, full width, height 80px,
- * inner container 1200px with logo (ZONO, hidden on load, fades in),
+ * inner container 1200px with logo (ASV, hidden on load, fades in),
  * links 18px Inter Display rgb(11,11,11), CTA button teal.
  * Link hover: color -> teal + slight slide animation (Framer default).
  */
@@ -34,9 +35,9 @@ export function Navbar() {
           transition={{ delay: 0.1, duration: 2, ease: EASE }}
         >
           <img
-            src="https://framerusercontent.com/images/1ydgJPCJGBnAz2WrXqIARU41M4.png?width=181&height=55"
-            alt="ZONO"
-            className="h-[30px] w-[84px] object-contain"
+            src={asvLogo}
+            alt="ASV"
+            className="h-[40px] w-auto object-contain"
           />
         </motion.a>
 

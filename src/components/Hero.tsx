@@ -40,19 +40,20 @@ export function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.2, duration: 2, ease: EASE }}
             >
-              Prepare Graduates for a{' '}
-              <span className="text-teal">Changing World of Work</span>
+              Building a trusted ecosystem for{' '}
+              <span className="text-teal">measurable employability readiness.</span>
             </motion.h1>
 
             <motion.p
-              className="max-w-[600px] text-center text-gray-1"
+              className="max-w-[640px] text-center text-gray-1"
               style={{ fontSize: '20px', lineHeight: '28px', letterSpacing: '-0.4px', fontWeight: 500 }}
               initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.3, duration: 2, ease: EASE }}
             >
-              A focused, evidence-informed approach to help institutions
-              understand and strengthen graduate employment readiness.
+              ASV helps institutions understand employability gaps, guide learner
+              improvement and demonstrate career readiness through structured
+              frameworks, technology and verified evidence.
             </motion.p>
           </div>
 

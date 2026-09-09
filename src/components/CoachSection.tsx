@@ -1,39 +1,40 @@
 import { motion } from 'framer-motion'
 import { Badge, SectionHeading } from './shared/ui'
 import { Reveal, EASE } from './shared/Reveal'
+import aboutImg from '../assets/about.png'
 
-const COACH_IMG = 'https://framerusercontent.com/images/YT9cg8bCskx6fVuxTaD02II4QOM.png?scale-down-to=1024'
+const COACH_IMG = aboutImg
 
 const COACH_CARDS = [
   {
-    title: 'About coach',
+    title: 'About',
     icon: 'eye',
     paragraphs: [
-      'Rahul is a full-time business coach who built his coaching business from scratch without social media fame, paid ads, or a tech team.',
-      'Through real-world experience, experimentation, and smart systems, he cracked a repeatable way to grow a coaching business using AI.',
-      'Today, he mentors coaches to build structured, scalable businesses that don’t rely on hustle or guesswork.',
+      'ASV helps institutions move beyond marks, attendance and course completion by using structured assessment and verified evidence to understand employability readiness.',
+      'AERS brings together the perspectives of leadership, faculty, learners, employers and support teams to create a more complete picture of graduate readiness.',
+      'AERS turns insights into practical priorities and supports institutions in continuously reviewing progress and strengthening graduate readiness over time.',
     ],
   },
   {
     title: 'Vision',
     icon: 'target',
     paragraphs: [
-      'To create a future where knowledge-driven professionals can build successful coaching businesses using intelligent systems, not complexity unlocking sustainable growth at any stage.',
+      'To create a future where every graduate is better prepared for the changing world of work through measurable, evidence-informed employability readiness.',
     ],
   },
   {
     title: 'Mission',
     icon: 'shield',
     paragraphs: [
-      'To equip coaches with practical, AI-powered frameworks that simplify business setup, client acquisition, and scaling without requiring a large audience or technical expertise.',
+      'To help institutions understand employability gaps, guide meaningful learner improvement, and demonstrate career readiness through structured frameworks, technology, and verified evidence.',
     ],
   },
 ]
 
 /**
  * Reference coach section:
- * - Left column 440px: badge "About", H2 "Meet your coach" (teal "coach"),
- *   300px image r16, name 24px/500, role 16px gray-2
+ * - Left column 440px: badge "About", H2 "The AERS Approach" (teal "Approach"),
+ *   300px image r16, title 24px/500
  * - Right column 700px: 3 white cards r16 p16 with pattern left strip,
  *   heading row (icon 40px bg sky r8 + title 20px/500) + paragraphs 16px gray-2
  */
@@ -49,7 +50,7 @@ export function CoachSection() {
             </Reveal>
             <Reveal delay={0.15}>
               <SectionHeading>
-                Meet your <span className="text-teal">coach</span>
+                The ASV <span className="text-teal">Approach</span>
               </SectionHeading>
             </Reveal>
           </div>
@@ -64,7 +65,7 @@ export function CoachSection() {
           >
             <img
               src={COACH_IMG}
-              alt="Rahul - AI Coach"
+              alt="The ASV Approach"
               className="h-[300px] w-full object-cover"
               loading="lazy"
             />
@@ -72,15 +73,12 @@ export function CoachSection() {
 
           <Reveal delay={0.25} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <span
-                className="font-body text-ink"
-                style={{ fontSize: '24px', lineHeight: '31.2px', letterSpacing: '-0.96px', fontWeight: 500 }}
+              <p
+                className="text-gray-2"
+                style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
               >
-                Rahul
-              </span>
-              <span className="text-gray-2" style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}>
-                Ai Coach & Founder of Zono
-              </span>
+                From learning to demonstrated readiness
+              </p>
             </div>
           </Reveal>
         </div>

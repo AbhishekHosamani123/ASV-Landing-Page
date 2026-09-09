@@ -20,34 +20,35 @@ export function LearningSection() {
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4">
           <Reveal delay={0.1}>
-            <SectionHeading>What you will learn.</SectionHeading>
+            <SectionHeading>What Changes</SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>
             <p
               className="max-w-[700px] text-center text-gray-1"
               style={{ fontSize: '20px', lineHeight: '28px', letterSpacing: '-0.4px', fontWeight: 500 }}
             >
-              This masterclass is packed with actionable strategies, including.
+              Employability becomes visible, actionable and demonstrable.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid w-full max-w-[1200px] grid-cols-1 gap-5 tb:grid-cols-2 dt:grid-cols-4">
+        <div className="grid w-full max-w-[1240px] grid-cols-1 gap-5 tb:grid-cols-2 dt:grid-cols-5 dt:gap-4">
           {LEARN_ITEMS.map((item, i) => {
+            const isOffset = i % 2 === 1
             const isPattern = item.variant === 'pattern'
             return (
               <motion.div
                 key={item.title}
-                className={`relative flex flex-col overflow-hidden rounded-2xl p-5 ${
-                  isPattern
-                    ? 'min-h-[260px] dt:min-h-[260px] dt:translate-y-[40%] tb:min-h-[517px]'
-                    : 'min-h-[400px] dt:min-h-[461px] tb:min-h-[517px]'
+                className={`relative flex flex-col overflow-hidden rounded-2xl p-4.5 dt:p-4 ${
+                  isOffset
+                    ? 'min-h-[260px] dt:min-h-[260px] dt:translate-y-[36%] tb:min-h-[460px]'
+                    : 'min-h-[380px] dt:min-h-[450px] tb:min-h-[460px]'
                 }`}
                 style={isPattern ? { backgroundColor: item.bg } : undefined}
                 initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: '0px 0px -10% 0px' }}
-                transition={{ delay: 0.1 + i * 0.1, duration: 2, ease: EASE }}
+                transition={{ delay: 0.1 + i * 0.08, duration: 2, ease: EASE }}
                 whileHover={{ scale: 1.02 }}
               >
                 {item.variant === 'image' && item.img && (
@@ -80,19 +81,20 @@ export function LearningSection() {
                   />
                 )}
                 <h3
-                  className="relative z-10 font-display text-ink-2"
+                  className={`relative z-10 font-display ${'titleColor' in item && item.titleColor ? '' : 'text-ink-2'}`}
                   style={{
-                    fontSize: 'clamp(22px, 2vw, 24px)',
-                    lineHeight: 'clamp(29px, 2.4vw, 31.2px)',
-                    letterSpacing: '-0.96px',
+                    fontSize: 'clamp(20px, 1.5vw, 22px)',
+                    lineHeight: 'clamp(26px, 1.9vw, 28.6px)',
+                    letterSpacing: '-0.6px',
                     fontWeight: 500,
+                    ...('titleColor' in item && item.titleColor ? { color: item.titleColor } : {}),
                   }}
                 >
                   {item.title}
                 </h3>
                 <p
                   className="relative z-10 mt-auto pt-4 text-gray-2"
-                  style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
+                  style={{ fontSize: '15px', lineHeight: '21px', letterSpacing: '-0.3px' }}
                 >
                   {item.desc}
                 </p>

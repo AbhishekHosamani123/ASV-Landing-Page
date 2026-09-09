@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { EASE } from './shared/Reveal'
-
-const FOOTER_LOGO = 'https://framerusercontent.com/images/9EuKGs1vSoDQy8DefoyZu7oug.png?width=400&height=400'
+import asvLogo from '../assets/asv-logo.png'
 
 const PAGES = ['Home', 'Waitlist', 'Contact', 'Privacy Policy', 'Terms & Conditions', '404']
 const NAV = ['Masterclass booking', 'About me', 'Learn', 'Testimonials', 'FAQ']
@@ -27,7 +26,7 @@ export function Footer() {
           transition={{ delay: 0.1, duration: 2, ease: EASE }}
         >
           <div className="flex w-full max-w-[440px] flex-col items-center gap-6">
-            <img src={FOOTER_LOGO} alt="Zono logo" className="h-[60px] w-[60px] rounded-2xl" loading="lazy" />
+            <img src={asvLogo} alt="ASV logo" className="h-[60px] w-auto rounded-2xl bg-cream/90 p-2 object-contain" loading="lazy" />
             <div className="flex flex-col items-center gap-4 text-center">
               <h2
                 className="font-display text-white"

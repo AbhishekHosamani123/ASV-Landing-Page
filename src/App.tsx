@@ -1,5 +1,6 @@
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import { EcosystemSection } from './components/EcosystemSection'
 import { BookingSection } from './components/BookingSection'
 import { LearningSection } from './components/LearningSection'
 import { StatsSection } from './components/StatsSection'
@@ -14,9 +15,10 @@ import { SocialsSection } from './components/SocialsSection'
 import { Footer } from './components/Footer'
 
 /**
- * ZONO clone — section order mirrors zono.framer.ai:
- * Hero → Booking → Learn → Stats → Coach → Comparison → Why choose →
- * Audience → Testimonials → Guarantee → FAQ → Socials → Footer
+ * ASV site — section order:
+ * Hero → About (ASV Approach) → AERS Ecosystem → Booking → Learn → Stats →
+ * Comparison → Why choose → Audience → Testimonials → Guarantee → FAQ →
+ * Socials → Footer
  */
 export default function App() {
   return (
@@ -24,10 +26,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <CoachSection />
+        <EcosystemSection />
         <BookingSection />
         <LearningSection />
         <StatsSection />
-        <CoachSection />
         <ComparisonSection />
         <FeaturesSection />
         <AudienceSection />
