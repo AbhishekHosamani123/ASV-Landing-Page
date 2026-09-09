@@ -25,7 +25,7 @@ export function FeaturesSection() {
             <Reveal delay={0.1}>
               <SectionHeading>
                 Why choose this <br />
-                <span className="text-teal">Zono masterclass</span>
+                <span className="text-[#2D86FC]">Zono masterclass</span>
               </SectionHeading>
             </Reveal>
             <Reveal delay={0.15}>

@@ -22,7 +22,7 @@ import { Footer } from './components/Footer'
  */
 export default function App() {
   return (
-    <div className="min-h-screen bg-cream font-body">
+    <div className="min-h-screen bg-white font-body">
       <Navbar />
       <main>
         <Hero />

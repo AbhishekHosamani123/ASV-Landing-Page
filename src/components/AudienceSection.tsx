@@ -16,14 +16,14 @@ export function AudienceSection() {
       <div className="flex w-full max-w-[1000px] flex-col items-center gap-10">
         <Reveal delay={0.1} className="w-full text-center">
           <SectionHeading>
-            Who <span className="text-teal">this masterclass</span> is (and Isn’t) for
+            Who <span className="text-[#2D86FC]">this masterclass</span> is (and Isn’t) for
           </SectionHeading>
         </Reveal>
 
         <div className="flex w-full max-w-[960px] flex-col gap-[30px] dt:flex-row">
           {/* Fit card */}
           <motion.div
-            className="flex w-full flex-col gap-[26px] rounded-[26px] bg-white p-[26px] dt:w-1/2"
+            className="flex w-full flex-col gap-[26px] rounded-[26px] bg-white border border-light-gray shadow-sm p-[26px] dt:w-1/2"
             initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
@@ -61,7 +61,7 @@ export function AudienceSection() {
 
           {/* Not fit card */}
           <motion.div
-            className="flex w-full flex-col gap-[26px] rounded-[26px] bg-cream-2/60 p-[26px] dt:w-1/2"
+            className="flex w-full flex-col gap-[26px] rounded-[26px] bg-white border border-light-gray shadow-sm p-[26px] dt:w-1/2"
             initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}

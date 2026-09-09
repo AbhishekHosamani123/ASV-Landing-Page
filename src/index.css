@@ -19,18 +19,26 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-cream: #faf7ef;
-  --color-cream-2: #f4efe1;
-  --color-ink: #0b0b0b;
-  --color-ink-2: #0b282e;
-  --color-teal: #1e7280;
-  --color-teal-2: #1a616d;
-  --color-blue: #0099ff;
-  --color-gray-1: #605f5f;
-  --color-gray-2: #363636;
-  --color-gray-3: #c9dde1;
-  --color-sky: #ecf6f8;
-  --font-display: 'Bricolage Grotesque', sans-serif;
+  --color-white: #ffffff;
+  --color-cream: #ffffff;
+  --color-cream-2: #f9fafb;
+  --color-navy: #0f3d66;
+  --color-navy-dark: #0a2945;
+  --color-ink: #0f3d66;
+  --color-ink-2: #0f3d66;
+  --color-teal: #081e5d;
+  --color-teal-2: #05153f;
+  --color-blue: #081e5d;
+  --color-gray-1: #4b5563;
+  --color-gray-2: #374151;
+  --color-gray-3: #9ca3af;
+  --color-light-gray: #e5e7eb;
+  --color-border-gray: #e5e7eb;
+  --color-sky: #f0fdfa;
+  --color-gold: #d4a017;
+  --color-gold-2: #b8860b;
+  --color-blue-accent: #2D86FC;
+  --font-display: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-body: 'Inter Display', 'Inter', sans-serif;
   /* Reference Framer breakpoints: tablet 810px, desktop 1200px */
   --breakpoint-tb: 810px;
@@ -43,7 +51,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream);
+  background-color: #ffffff;
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -51,7 +59,7 @@ body {
 }
 
 ::selection {
-  background: rgba(30, 114, 128, 0.2);
+  background: rgba(26, 166, 166, 0.2);
 }
 
 /* Roll text effect for buttons (matches Framer Button hover):

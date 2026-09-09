@@ -20,7 +20,7 @@ export function ComparisonSection() {
         <div className="flex flex-col items-center gap-4">
           <Reveal delay={0.1}>
             <SectionHeading>
-              What makes <span className="text-teal">AERS</span> different?
+              What makes <span className="text-[#2D86FC]">AERS</span> different?
             </SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>

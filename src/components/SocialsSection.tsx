@@ -38,7 +38,7 @@ export function SocialsSection() {
           </Reveal>
           <Reveal delay={0.15}>
             <SectionHeading>
-              Stay in <span className="text-teal">the loop</span>
+              Stay in <span className="text-[#2D86FC]">the loop</span>
             </SectionHeading>
           </Reveal>
         </div>

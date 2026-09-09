@@ -26,7 +26,7 @@ const PORTRAITS = [
   { src: right2Img, name: 'Student' },
 ]
 
-const BLUE = '#0099ff'
+const BLUE = '#081E5D'
 
 export function HeroCollage() {
   return (
@@ -111,7 +111,7 @@ export function HeroCollage() {
       {/* ================= floating glass stat chips ================= */}
       {/* rating — left of center (moves to left edge on mobile) */}
       <FloatCard className="left-[17%] top-[15%] z-30 max-[809px]:left-[2%] max-[809px]:top-[30%]" delay={0.8}>
-        <IconTile><Star className="h-[18px] w-[18px] fill-amber-400 text-amber-400" /></IconTile>
+        <IconTile><Star className="h-[18px] w-[18px] fill-gold text-gold" /></IconTile>
         <div className="flex flex-col">
           <span className="text-[15px] font-semibold leading-tight text-ink">4.9/5 Rating</span>
           <span className="text-[12px] leading-tight text-gray-1">150+ reviews</span>

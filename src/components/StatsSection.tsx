@@ -45,7 +45,7 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
  */
 export function StatsSection() {
   return (
-    <section className="flex flex-col items-center gap-[30px] px-5 py-10 dt:gap-[60px] dt:px-0 dt:py-[80px]">
+    <section id="insights" className="scroll-mt-20 flex flex-col items-center gap-[30px] px-5 py-10 dt:gap-[60px] dt:px-0 dt:py-[80px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <Reveal delay={0.1}>

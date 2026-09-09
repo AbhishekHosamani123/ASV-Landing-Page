@@ -6,7 +6,7 @@ import { TESTIMONIALS_ROW1, TESTIMONIALS_ROW2, type Testimonial } from '../data/
 
 function Star() {
   return (
-    <svg viewBox="0 0 24 24" className="h-4 w-4 text-ink" fill="currentColor" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 text-gold" fill="currentColor" aria-hidden>
       <use href="/icons.svg#star" />
     </svg>
   )
@@ -119,7 +119,7 @@ export function Testimonials() {
           </Reveal>
           <Reveal delay={0.15}>
             <SectionHeading>
-              Real <span className="text-teal">people.</span> Real shifts. Real
+              Real <span className="text-[#2D86FC]">people.</span> Real shifts. Real
               peace.
             </SectionHeading>
           </Reveal>

@@ -15,7 +15,7 @@ import { HeroCollage } from './HeroCollage'
  */
 export function Hero() {
   return (
-    <header className="relative flex flex-col items-center px-5 pb-10 pt-[80px] dt:px-0 dt:pb-[80px] dt:pt-[80px]">
+    <header id="home" className="relative flex flex-col items-center px-5 pb-10 pt-[96px] dt:px-0 dt:pb-[80px] dt:pt-[110px]">
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-10 dt:gap-[60px]">
         {/* Text content — centered in upper portion */}
         <div className="flex w-full flex-col items-center gap-6 pt-5 dt:pt-[60px]">
@@ -41,7 +41,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 2, ease: EASE }}
             >
               Building a trusted ecosystem for{' '}
-              <span className="text-teal">measurable employability readiness.</span>
+              <span className="text-[#2D86FC]">measurable employability readiness.</span>
             </motion.h1>
 
             <motion.p

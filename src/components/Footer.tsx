@@ -3,7 +3,15 @@ import { EASE } from './shared/Reveal'
 import asvLogo from '../assets/asv-logo.png'
 
 const PAGES = ['Home', 'Waitlist', 'Contact', 'Privacy Policy', 'Terms & Conditions', '404']
-const NAV = ['Masterclass booking', 'About me', 'Learn', 'Testimonials', 'FAQ']
+const NAV = [
+  { label: 'Home', href: '#home' },
+  { label: 'About ASV', href: '#about-coach' },
+  { label: 'AERS', href: '#aers-ecosystem' },
+  { label: 'Institutions', href: '#institutions' },
+  { label: 'Employers', href: '#employers' },
+  { label: 'Insights', href: '#insights' },
+  { label: 'Contact', href: '#contact' },
+]
 const CONNECT = ['Instagram', 'YouTube', 'Twitter', 'Linkedin']
 
 /**
@@ -115,7 +123,13 @@ function WaitlistForm() {
   )
 }
 
-function FooterColumn({ title, links }: { title: string; links: string[] }) {
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string
+  links: (string | { label: string; href: string })[]
+}) {
   return (
     <div className="flex w-[160px] flex-col gap-4">
       <span
@@ -125,16 +139,20 @@ function FooterColumn({ title, links }: { title: string; links: string[] }) {
         {title}
       </span>
       <div className="flex flex-col gap-2">
-        {links.map((l) => (
-          <a
-            key={l}
-            href="#"
-            className="w-fit py-0.5 text-gray-3 transition-all duration-300 hover:translate-x-1 hover:text-white"
-            style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
-          >
-            {l}
-          </a>
-        ))}
+        {links.map((l) => {
+          const label = typeof l === 'string' ? l : l.label
+          const href = typeof l === 'string' ? '#' : l.href
+          return (
+            <a
+              key={label}
+              href={href}
+              className="w-fit py-0.5 text-gray-3 transition-all duration-300 hover:translate-x-1 hover:text-white"
+              style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
+            >
+              {label}
+            </a>
+          )
+        })}
       </div>
     </div>
   )

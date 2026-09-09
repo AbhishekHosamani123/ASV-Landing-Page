@@ -20,9 +20,9 @@ import aersLogo from '../assets/logos/aers-logo.png'
  * SHARED OUTCOME (large wide gold-accent card)
  */
 
-const GOLD = '#c9a227'
-const BLUE = '#0099ff'
-const TEAL = '#1e7280'
+const GOLD = '#D4A017'
+const BLUE = '#081E5D'
+const TEAL = '#081E5D'
 
 /* ---------- Connector lines ---------- */
 
@@ -92,7 +92,7 @@ function Annotation({ children, className = '', rotate = -4 }: { children: strin
   return (
     <motion.span
       className={`pointer-events-none absolute hidden select-none lg:block ${className}`}
-      style={{ fontFamily: "'Caveat', cursive", fontSize: '21px', lineHeight: '26px', color: TEAL, transform: `rotate(${rotate}deg)` }}
+      style={{ fontFamily: "'Caveat', cursive", fontSize: '21px', lineHeight: '26px', color: '#2D86FC', transform: `rotate(${rotate}deg)` }}
       initial={{ opacity: 0.001, y: 10 }}
       whileInView={{ opacity: 0.9, y: 0 }}
       viewport={{ once: true }}
@@ -204,7 +204,7 @@ export function EcosystemSection() {
             <br />
             <span
               style={{
-                background: 'linear-gradient(100deg, #0099ff 8%, #1e7280 92%)',
+                background: 'linear-gradient(100deg, #2D86FC 8%, #081E5D 92%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -270,31 +270,22 @@ export function EcosystemSection() {
         {/* ============ Level 2 — AERS Flagship Programme (large card) ============ */}
         <Reveal delay={0.35} className="w-full">
           <motion.div
-            className="relative flex w-full flex-col items-start gap-7 overflow-hidden rounded-[32px] bg-[#7cbdfd] p-8 shadow-[0_24px_64px_rgba(124,189,253,0.35)] tb:flex-row tb:items-center tb:gap-10 tb:p-11"
+            className="relative flex w-full flex-col items-start gap-7 overflow-hidden rounded-[32px] bg-navy p-8 shadow-[0_24px_64px_rgba(15,61,102,0.25)] tb:flex-row tb:items-center tb:gap-10 tb:p-11"
             initial={{ opacity: 0.001, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
             transition={{ delay: 0.35, duration: 2, ease: EASE }}
             whileHover={{ y: -4 }}
           >
-            {/* subtle lighting overlay */}
-            <span
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  'radial-gradient(64% 150% at 10% 50%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 100%), radial-gradient(48% 130% at 90% 18%, rgba(0,102,204,0.12) 0%, rgba(0,102,204,0) 100%)',
-              }}
-              aria-hidden
-            />
-            <img src={aersLogo} alt="AERS — Flagship Programme logo" className="relative h-[86px] w-auto shrink-0 object-contain" />
-            <span className="relative hidden h-16 w-px bg-ink-2/15 tb:block" aria-hidden />
-            <p className="relative max-w-[520px] text-ink-2" style={{ fontSize: '19px', lineHeight: '28px', letterSpacing: '-0.38px', fontWeight: 500 }}>
-              Applies the framework through <span className="text-teal-2" style={{ fontWeight: 600 }}>Explore</span> and{' '}
-              <span className="text-teal-2" style={{ fontWeight: 600 }}>Transform</span>
+            <img src={aersLogo} alt="AERS — Flagship Programme logo" className="relative h-[86px] w-auto shrink-0 object-contain brightness-0 invert" />
+            <span className="relative hidden h-16 w-px bg-white/20 tb:block" aria-hidden />
+            <p className="relative max-w-[520px] text-white/90" style={{ fontSize: '19px', lineHeight: '28px', letterSpacing: '-0.38px', fontWeight: 500 }}>
+              Applies the framework through <span className="text-[#2D86FC] font-semibold">Explore</span> and{' '}
+              <span className="text-[#2D86FC] font-semibold">Transform</span>
             </p>
-            <span className="relative ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-ink-2/15 bg-white/40 px-5 py-2.5 tb:flex">
-              <span className="h-2 w-2 rounded-full bg-teal-2" />
-              <span className="text-ink-2" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
+            <span className="relative ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 tb:flex">
+              <span className="h-2 w-2 rounded-full bg-teal" />
+              <span className="text-white" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
                 LEVEL 02 — DELIVER
               </span>
             </span>
@@ -320,7 +311,8 @@ export function EcosystemSection() {
           ].map((row, i) => (
             <motion.div
               key={row.title}
-              className="flex min-h-[240px] flex-col items-start gap-6 rounded-[30px] border border-blue/10 bg-white p-8 shadow-[0_18px_48px_rgba(0,80,160,0.10)]"
+              id={row.title.toLowerCase()}
+              className="scroll-mt-28 flex min-h-[240px] flex-col items-start gap-6 rounded-[30px] border border-blue/10 bg-white p-8 shadow-[0_18px_48px_rgba(0,80,160,0.10)]"
               initial={{ opacity: 0.001, y: 70, scale: 0.94 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '0px 0px -10% 0px' }}
@@ -358,38 +350,29 @@ export function EcosystemSection() {
           <CurveArrow className="left-[6%] top-1/2 -translate-y-1/2" />
         </div>
 
-        {/* ============ Level 4 — SHARED OUTCOME (large wide yellow card) ============ */}
+        {/* ============ Level 4 — SHARED OUTCOME (Gold accent card) ============ */}
         <Reveal delay={0.85} className="w-full">
           <motion.div
-            className="relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-[32px] bg-[#fed700] px-9 py-10 text-center shadow-[0_24px_60px_rgba(254,215,0,0.35)] tb:flex-row tb:justify-center tb:gap-7 tb:py-12"
+            className="relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-[32px] bg-gradient-to-r from-[#D4A017] to-[#B8860B] px-9 py-10 text-center shadow-[0_24px_60px_rgba(212,160,23,0.30)] tb:flex-row tb:justify-center tb:gap-7 tb:py-12 text-white"
             initial={{ opacity: 0.001, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
             transition={{ delay: 0.85, duration: 2, ease: EASE }}
             whileHover={{ y: -4 }}
           >
-            {/* subtle lighting overlay */}
             <span
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  'radial-gradient(64% 150% at 10% 50%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%), radial-gradient(48% 130% at 90% 18%, rgba(230,170,0,0.2) 0%, rgba(230,170,0,0) 100%)',
-              }}
-              aria-hidden
-            />
-            <span
-              className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink-2/10"
+              className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/20"
             >
-              <Award className="h-7 w-7 text-ink-2" strokeWidth={1.8} />
+              <Award className="h-7 w-7 text-white" strokeWidth={1.8} />
             </span>
             <span
-              className="relative font-display text-ink-2"
+              className="relative font-display text-white"
               style={{ fontSize: 'clamp(20px, 2.2vw, 25px)', lineHeight: 'clamp(27px, 2.6vw, 33px)', letterSpacing: '0.08em', fontWeight: 700 }}
             >
               SHARED OUTCOME
             </span>
-            <span className="relative hidden h-7 w-px bg-ink-2/20 tb:block" aria-hidden />
-            <span className="relative text-ink-2" style={{ fontSize: '18px', lineHeight: '26px', letterSpacing: '-0.36px', fontWeight: 500 }}>
+            <span className="relative hidden h-7 w-px bg-white/30 tb:block" aria-hidden />
+            <span className="relative text-white/95" style={{ fontSize: '18px', lineHeight: '26px', letterSpacing: '-0.36px', fontWeight: 500 }}>
               Measurable improvement and evidence-backed readiness
             </span>
           </motion.div>

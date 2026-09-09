@@ -18,7 +18,7 @@ export function GuaranteeSection() {
           </Reveal>
           <Reveal delay={0.15}>
             <SectionHeading>
-              A <span className="text-teal">risk-free</span> decision
+              A <span className="text-[#2D86FC]">risk-free</span> decision
             </SectionHeading>
           </Reveal>
         </div>

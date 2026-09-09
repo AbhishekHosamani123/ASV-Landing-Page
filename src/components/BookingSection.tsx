@@ -129,7 +129,7 @@ function SessionCard({ session, delay }: { session: SessionItem; delay: number }
         {session.price ? (
           <>
             <span
-              className="shrink-0 font-body text-teal"
+              className="shrink-0 font-body text-[#2D86FC]"
               style={{ fontSize: 'clamp(24px, 2vw, 32px)', lineHeight: 'clamp(32px, 2.6vw, 42px)', letterSpacing: '-0.04em', fontWeight: 500 }}
             >
               {session.price}
@@ -159,7 +159,7 @@ export function BookingSection() {
           </Reveal>
           <Reveal delay={0.15} className="flex flex-col items-center gap-4">
             <SectionHeading>
-              One Purpose. <span className="text-teal">Three Connected Stakeholders.</span>
+              One Purpose. <span className="text-[#2D86FC]">Three Connected Stakeholders.</span>
             </SectionHeading>
             <p
               className="max-w-[620px] text-center text-gray-1"

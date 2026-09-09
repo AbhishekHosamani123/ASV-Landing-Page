@@ -77,7 +77,7 @@ export function ButtonOutline({ children, onClick, icon, className = '' }: Butto
       {icon}
       <span className="relative flex h-[22px] items-center overflow-hidden">
         <span
-          className="block text-teal"
+          className="block text-[#2D86FC]"
           style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
         >
           {label}

@@ -10,23 +10,21 @@ const COACH_CARDS = [
     title: 'About',
     icon: 'eye',
     paragraphs: [
-      'ASV helps institutions move beyond marks, attendance and course completion by using structured assessment and verified evidence to understand employability readiness.',
-      'AERS brings together the perspectives of leadership, faculty, learners, employers and support teams to create a more complete picture of graduate readiness.',
-      'AERS turns insights into practical priorities and supports institutions in continuously reviewing progress and strengthening graduate readiness over time.',
+      'ASV Education is building a collaborative employability ecosystem that connects institutions, learners and employers around one goal: measurable career readiness.',
     ],
   },
   {
     title: 'Vision',
     icon: 'target',
     paragraphs: [
-      'To create a future where every graduate is better prepared for the changing world of work through measurable, evidence-informed employability readiness.',
+      "To become India's most trusted employability ecosystem, enabling every student to graduate with measurable career readiness.",
     ],
   },
   {
     title: 'Mission',
     icon: 'shield',
     paragraphs: [
-      'To help institutions understand employability gaps, guide meaningful learner improvement, and demonstrate career readiness through structured frameworks, technology, and verified evidence.',
+      'To empower institutions with an AI-enabled employability ecosystem that measures, develops and continuously improves career readiness.',
     ],
   },
 ]
@@ -50,7 +48,7 @@ export function CoachSection() {
             </Reveal>
             <Reveal delay={0.15}>
               <SectionHeading>
-                The ASV <span className="text-teal">Approach</span>
+                The ASV <span className="text-[#2D86FC]">Approach</span>
               </SectionHeading>
             </Reveal>
           </div>
@@ -88,7 +86,7 @@ export function CoachSection() {
           {COACH_CARDS.map((card, i) => (
             <motion.div
               key={card.title}
-              className="relative overflow-hidden rounded-2xl bg-white p-4"
+              className="relative overflow-hidden rounded-2xl bg-white border border-light-gray shadow-sm p-4"
               initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: '0px 0px -10% 0px' }}

@@ -25,7 +25,7 @@ export function FAQ() {
           </Reveal>
           <Reveal delay={0.15}>
             <SectionHeading>
-              Got <span className="text-teal">questions?</span>
+              Got <span className="text-[#2D86FC]">questions?</span>
             </SectionHeading>
           </Reveal>
         </div>
@@ -89,7 +89,7 @@ export function FAQ() {
 
         {/* Contact help card — mobile: text left (174px) + CTA right, 172px tall */}
         <Reveal delay={0.2}>
-          <div className="flex w-full max-w-[800px] items-center justify-between gap-5 rounded-2xl bg-[#e9f1f2] p-5">
+          <div className="flex w-full max-w-[800px] items-center justify-between gap-5 rounded-2xl bg-sky border border-light-gray p-5">
             <div className="flex flex-col gap-2">
               <span
                 className="font-body text-ink-2"
