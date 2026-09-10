@@ -48,8 +48,8 @@ export function FAQ() {
                   aria-expanded={isOpen}
                 >
                   <span
-                    className="text-ink"
-                    style={{ fontSize: 'clamp(16px, 1.3vw, 18px)', lineHeight: 'clamp(22.4px, 1.6vw, 25.2px)', letterSpacing: '-0.02em', fontWeight: 400 }}
+                    className="text-ink font-medium"
+                    style={{ fontSize: 'clamp(16px, 1.3vw, 18px)', lineHeight: 'clamp(22.4px, 1.6vw, 25.2px)', letterSpacing: '-0.02em' }}
                   >
                     {faq.q}
                   </span>
@@ -74,8 +74,8 @@ export function FAQ() {
                       className="overflow-hidden"
                     >
                       <p
-                        className="text-gray-1"
-                        style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
+                        className="text-gray-1 pt-1"
+                        style={{ fontSize: '15px', lineHeight: '23px', letterSpacing: '-0.3px', fontWeight: 500 }}
                       >
                         {faq.a}
                       </p>
@@ -87,22 +87,25 @@ export function FAQ() {
           })}
         </div>
 
-        {/* Contact help card — mobile: text left (174px) + CTA right, 172px tall */}
-        <Reveal delay={0.2}>
-          <div className="flex w-full max-w-[800px] items-center justify-between gap-5 rounded-2xl bg-sky border border-light-gray p-5">
-            <div className="flex flex-col gap-2">
+        {/* Contact help card */}
+        <Reveal delay={0.2} className="w-full">
+          <div className="flex w-full flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl bg-sky border border-light-gray p-6">
+            <div className="flex flex-col gap-1.5">
               <span
-                className="font-body text-ink-2"
-                style={{ fontSize: 'clamp(18px, 2vw, 24px)', lineHeight: 'clamp(24px, 2.4vw, 31.2px)', letterSpacing: '-0.04em', fontWeight: 500 }}
+                className="font-display text-ink-2 font-bold"
+                style={{ fontSize: 'clamp(20px, 2.2vw, 24px)', lineHeight: 'clamp(26px, 2.6vw, 32px)', letterSpacing: '-0.03em' }}
               >
-                Have questions? we're here to help!
+                Want to know more?
               </span>
-              <span className="text-gray-2" style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}>
-                Reach out to our support team for any queries or assistance.
+              <span className="text-ink font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>
+                We’re here to help.
               </span>
+              <p className="text-gray-1 max-w-[500px]" style={{ fontSize: '15px', lineHeight: '22px', letterSpacing: '-0.3px' }}>
+                Have a question about AERS, the student journey, or how it can work within your institution? Reach out to our team.
+              </p>
             </div>
             <ButtonFilled href="#contact" className="shrink-0">
-              Contact us
+              Contact us →
             </ButtonFilled>
           </div>
         </Reveal>

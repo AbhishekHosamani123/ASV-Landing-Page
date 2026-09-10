@@ -83,10 +83,10 @@ export function Navbar() {
             ))}
           </motion.div>
 
-          {/* Right Action: Join waitlist Button flush with top/bottom/right edges */}
+          {/* Right Action: Contact Button flush with top/bottom/right edges */}
           <div className="flex items-center h-full gap-2 shrink-0">
             <motion.a
-              href="#booking"
+              href="#contact"
               className="group relative inline-flex h-full items-center justify-center rounded-full bg-teal px-6 sm:px-8 text-white transition-colors duration-300 hover:bg-teal-2 shadow-sm font-medium -my-[1px] -mr-[1px]"
               initial={{ opacity: 0.001, x: 15 }}
               animate={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export function Navbar() {
                 className="text-white text-[14px] sm:text-[15px] font-medium whitespace-nowrap"
                 style={{ lineHeight: '20px', letterSpacing: '-0.25px' }}
               >
-                Join waitlist
+                Contact
               </span>
             </motion.a>
 

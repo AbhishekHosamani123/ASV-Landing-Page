@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { SectionHeading } from './shared/ui'
 import { Reveal, EASE } from './shared/Reveal'
 import { ZONO_FEATURES, OTHER_FEATURES } from '../data/content'
-import asvLogo from '../assets/asv-logo.png'
+import aersLogo from '../assets/aers-official-logo.png'
 
 /**
  * Reference comparison section (measured on live site):
@@ -42,8 +42,14 @@ export function ComparisonSection() {
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
             transition={{ delay: 0.2, duration: 2, ease: EASE }}
           >
-            <div className="flex h-[44px] items-center">
-              <img src={asvLogo} alt="ASV" className="h-[36px] w-auto object-contain" loading="lazy" />
+            <div className="flex h-[44px] items-center gap-3">
+              <img src={aersLogo} alt="AERS" className="h-[36px] w-auto object-contain" loading="lazy" />
+              <span
+                className="font-body text-ink-2"
+                style={{ fontSize: '20px', lineHeight: '26px', letterSpacing: '-0.5px', fontWeight: 500 }}
+              >
+                AERS
+              </span>
             </div>
             <div className="flex flex-col gap-3">
               {ZONO_FEATURES.map((f, i) => (

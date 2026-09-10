@@ -50,20 +50,21 @@ export function StatsSection() {
         <div className="flex flex-col items-center gap-4 text-center">
           <Reveal delay={0.1}>
             <SectionHeading>
-              Building the Future of Employment Readiness
+              See the complete picture.{' '}
+              <span className="text-[#2D86FC]">Then improve it.</span>
             </SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>
             <p
-              className="max-w-[720px] text-gray-1"
-              style={{ fontSize: '20px', lineHeight: '28px', letterSpacing: '-0.4px', fontWeight: 500 }}
+              className="max-w-[760px] text-gray-1"
+              style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
             >
-              AERS is designed to equip students with the skills, confidence, and practical experience they need to become workplace-ready.
+              AERS works with institutions, not on institutions. The process is collaborative, contextual and designed to convert evidence into practical action.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid w-full max-w-[1200px] grid-cols-2 gap-5 dt:grid-cols-4">
+        <div className="grid w-full max-w-[1200px] grid-cols-2 tb:grid-cols-3 dt:grid-cols-5 gap-4 dt:gap-5">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -74,15 +75,20 @@ export function StatsSection() {
               transition={{ delay: 0.1 + i * 0.1, duration: 2, ease: EASE }}
               whileHover={{ y: -4 }}
             >
-              <img src={stat.icon} alt="" className="h-16 w-16" loading="lazy" />
+              <img src={stat.icon} alt="" className="h-16 w-16 object-contain" loading="lazy" />
               <div className="flex flex-col gap-1">
                 <span
                   className="font-body text-ink"
-                  style={{ fontSize: '36px', lineHeight: '50.4px', letterSpacing: '-1.44px', fontWeight: 500 }}
+                  style={{
+                    fontSize: stat.title ? '28px' : '36px',
+                    lineHeight: stat.title ? '40px' : '50.4px',
+                    letterSpacing: stat.title ? '-0.8px' : '-1.44px',
+                    fontWeight: stat.title ? 600 : 500,
+                  }}
                 >
-                  <CountUp value={stat.value} suffix={stat.suffix} />
+                  {stat.title ? stat.title : <CountUp value={stat.value ?? 0} suffix={stat.suffix || ''} />}
                 </span>
-                <span className="text-gray-2" style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}>
+                <span className="text-gray-2" style={{ fontSize: '15px', lineHeight: '21px', letterSpacing: '-0.3px' }}>
                   {stat.label}
                 </span>
               </div>

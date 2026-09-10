@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Play } from 'lucide-react'
-import { Badge, ButtonFilled, ButtonOutline } from './shared/ui'
+import { ButtonFilled, ButtonOutline } from './shared/ui'
 import { EASE } from './shared/Reveal'
 import { HeroCollage } from './HeroCollage'
 
@@ -20,14 +20,6 @@ export function Hero() {
         {/* Text content — centered in upper portion */}
         <div className="flex w-full flex-col items-center gap-6 pt-5 dt:pt-[60px]">
           <div className="flex w-full flex-col items-center gap-4">
-            <motion.div
-              initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.1, duration: 2, ease: EASE }}
-            >
-              <Badge>3 hours AI Masterclass</Badge>
-            </motion.div>
-
             <motion.h1
               className="w-full text-center font-display text-ink-2"
               style={{
@@ -63,15 +55,16 @@ export function Hero() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.3, duration: 2, ease: EASE }}
           >
-            <ButtonFilled href="#booking">Book now</ButtonFilled>
+            <ButtonFilled href="#aers-ecosystem">Explore AERS</ButtonFilled>
             <ButtonOutline
+              href="#roadmap"
               icon={
                 <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-teal/10">
                   <Play className="h-3 w-3 fill-teal text-teal" />
                 </span>
               }
             >
-              Watch the intro
+              See how it works
             </ButtonOutline>
           </motion.div>
         </div>

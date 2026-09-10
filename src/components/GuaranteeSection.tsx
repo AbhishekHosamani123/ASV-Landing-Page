@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Badge, ButtonFilled } from './shared/ui'
 import { SectionHeading } from './shared/ui'
 import { Reveal, EASE } from './shared/Reveal'
+import graduatesImg from '../assets/graduates.png'
 
 /**
  * Reference guarantee section: white bg, pad 80px 100px.
@@ -14,11 +15,11 @@ export function GuaranteeSection() {
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4">
           <Reveal delay={0.1}>
-            <Badge>Guarantee</Badge>
+            <Badge>Evolve</Badge>
           </Reveal>
           <Reveal delay={0.15}>
             <SectionHeading>
-              A <span className="text-[#2D86FC]">risk-free</span> decision
+              <span className="text-[#2D86FC]">Evolve</span> with progress
             </SectionHeading>
           </Reveal>
         </div>
@@ -33,8 +34,8 @@ export function GuaranteeSection() {
             whileHover={{ scale: 1.02 }}
           >
             <img
-              src="https://framerusercontent.com/images/KDspVAOpaYvZd0ueln5mRNGBdw.png?scale-down-to=1024"
-              alt="Guarantee"
+              src={graduatesImg}
+              alt="Graduate Journey"
               className="w-full object-cover"
               style={{ height: 'clamp(223px, 30vw, 333px)' }}
               loading="lazy"
@@ -50,7 +51,7 @@ export function GuaranteeSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.25, duration: 2, ease: EASE }}
             >
-              I Promise You
+              A system that keeps evolving
             </motion.h3>
             <motion.p
               className="text-gray-1"
@@ -60,9 +61,7 @@ export function GuaranteeSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 2, ease: EASE }}
             >
-              Start today for only $15. Go through the entire masterclass,
-              and if you don’t love it, just email me. You’ll get 100% of
-              your money back no hassle, no questions.
+              Review progress, learn from what works, and continuously strengthen the system to create better outcomes over time.
             </motion.p>
             <motion.div
               initial={{ opacity: 0.001, y: 40 }}
@@ -71,7 +70,7 @@ export function GuaranteeSection() {
               transition={{ delay: 0.35, duration: 2, ease: EASE }}
               className="pt-2"
             >
-              <ButtonFilled href="#booking">Book now</ButtonFilled>
+              <ButtonFilled href="#booking">Explore AERS</ButtonFilled>
             </motion.div>
           </div>
         </div>

@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion'
 import { Badge, SectionHeading } from './shared/ui'
 import { Reveal, EASE } from './shared/Reveal'
-import aboutImg from '../assets/about.png'
-
-const COACH_IMG = aboutImg
 
 const COACH_CARDS = [
   {
@@ -48,34 +45,19 @@ export function CoachSection() {
             </Reveal>
             <Reveal delay={0.15}>
               <SectionHeading>
-                The ASV <span className="text-[#2D86FC]">Approach</span>
+                Not another course platform.{' '}
+                <span className="text-[#2D86FC]">A connected employability ecosystem.</span>
               </SectionHeading>
             </Reveal>
           </div>
 
-          <motion.div
-            className="w-[300px] overflow-hidden rounded-2xl"
-            initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: '0px 0px -10% 0px' }}
-            transition={{ delay: 0.2, duration: 2, ease: EASE }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <img
-              src={COACH_IMG}
-              alt="The ASV Approach"
-              className="h-[300px] w-full object-cover"
-              loading="lazy"
-            />
-          </motion.div>
-
-          <Reveal delay={0.25} className="flex flex-col gap-4">
+          <Reveal delay={0.2} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <p
                 className="text-gray-2"
-                style={{ fontSize: '16px', lineHeight: '22.4px', letterSpacing: '-0.32px' }}
+                style={{ fontSize: '16px', lineHeight: '24px', letterSpacing: '-0.32px' }}
               >
-                From learning to demonstrated readiness
+                ASV Education brings institutions, learners and employers around one shared purpose: better graduate employment readiness that can be understood, improved and demonstrated with evidence.
               </p>
             </div>
           </Reveal>

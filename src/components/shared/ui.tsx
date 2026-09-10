@@ -59,6 +59,7 @@ interface ButtonOutlineProps {
   onClick?: () => void
   icon?: React.ReactNode
   className?: string
+  href?: string
 }
 
 /**
@@ -66,14 +67,10 @@ interface ButtonOutlineProps {
  * transparent bg, radius 30px, padding 12px 24px, text teal,
  * 22px play-circle svg icon on the left. Same roll hover on text.
  */
-export function ButtonOutline({ children, onClick, icon, className = '' }: ButtonOutlineProps) {
+export function ButtonOutline({ children, onClick, icon, className = '', href }: ButtonOutlineProps) {
   const label = String(children)
-  return (
-    <motion.button
-      onClick={onClick}
-      className={`group inline-flex h-[46px] cursor-pointer items-center gap-2.5 rounded-[30px] px-6 py-3 ${className}`}
-      whileTap={{ scale: 0.96 }}
-    >
+  const inner = (
+    <>
       {icon}
       <span className="relative flex h-[22px] items-center overflow-hidden">
         <span
@@ -83,6 +80,26 @@ export function ButtonOutline({ children, onClick, icon, className = '' }: Butto
           {label}
         </span>
       </span>
+    </>
+  )
+
+  const cls = `group inline-flex h-[46px] cursor-pointer items-center gap-2.5 rounded-[30px] px-6 py-3 ${className}`
+
+  if (href) {
+    return (
+      <motion.a href={href} className={cls} whileTap={{ scale: 0.96 }}>
+        {inner}
+      </motion.a>
+    )
+  }
+
+  return (
+    <motion.button
+      onClick={onClick}
+      className={cls}
+      whileTap={{ scale: 0.96 }}
+    >
+      {inner}
     </motion.button>
   )
 }
@@ -116,9 +133,11 @@ export function Badge({ children }: { children: React.ReactNode }) {
 export function SectionHeading({
   children,
   className = '',
+  style,
 }: {
   children: React.ReactNode
   className?: string
+  style?: React.CSSProperties
 }) {
   return (
     <h2
@@ -127,6 +146,7 @@ export function SectionHeading({
         fontSize: 'clamp(34px, 4.6vw, 46px)',
         lineHeight: 'clamp(41px, 4.8vw, 55px)',
         fontWeight: 400,
+        ...style,
       }}
     >
       {children}

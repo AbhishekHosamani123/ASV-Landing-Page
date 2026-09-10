@@ -20,7 +20,9 @@ export function LearningSection() {
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-4">
           <Reveal delay={0.1}>
-            <SectionHeading>What Changes</SectionHeading>
+            <SectionHeading>
+              The AERS <span className="text-[#2D86FC]">Difference</span>
+            </SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>
             <p

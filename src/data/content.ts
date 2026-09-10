@@ -1,9 +1,13 @@
 import institutionIcon from '../assets/institution.png'
+import listenIcon from '../assets/listen-icon.png'
 import listenImg from '../assets/listen.png'
 import understandImg from '../assets/understand.png'
 import validateImg from '../assets/validate.png'
 import improveImg from '../assets/improve.png'
 import evolveImg from '../assets/evolve.png'
+import studentsImg from '../assets/students.png'
+import listenFeatureImg from '../assets/listen-feature.png'
+import validateFeatureImg from '../assets/validate-feature.png'
 
 /** All content extracted verbatim from https://zono.framer.ai/ */
 
@@ -114,68 +118,73 @@ export const LEARN_ITEMS: LearnItem[] = [
   {
     img: listenImg,
     variant: 'image',
-    title: 'Listen',
-    desc: 'Engage leadership, faculty, students, employers and support teams.',
+    title: 'Understand',
+    desc: 'Use evidence to identify the learner’s and institution’s actual readiness needs.',
+    titleColor: '#ffffff',
   },
   {
     img: understandImg,
     variant: 'image',
-    title: 'Understand',
-    desc: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
+    title: 'Improve',
+    desc: 'Build capability through structured learning, practical activities, guided practice and continuous improvement.',
+    titleColor: '#ffffff',
   },
   {
     img: validateImg,
     variant: 'image',
-    title: 'Validate',
-    desc: 'Cross-check findings with available institutional evidence and context.',
+    title: 'Human Review',
+    desc: 'Keep evidence, feedback and readiness decisions subject to authorised human judgement.',
     titleColor: '#ffffff',
   },
   {
     img: improveImg,
     variant: 'image',
-    title: 'Improve',
-    desc: 'Translate insights into focused, practical institutional priorities.',
-    titleColor: '#000000',
+    title: 'Use Tech',
+    desc: 'Use technology to support delivery, personalisation, tracking and reporting without replacing accountable human decisions.',
+    titleColor: '#ffffff',
   },
   {
     img: evolveImg,
     variant: 'image',
-    title: 'Evolve',
-    desc: 'Review progress, learn continuously and strengthen the system over time.',
+    title: 'Measurable Outcomes',
+    desc: 'Track participation, capability development, evidence completion and meaningful readiness improvement.',
+    titleColor: '#ffffff',
   },
 ]
 
 export interface StatItem {
-  value: number
-  suffix: string
+  value?: number
+  suffix?: string
+  title?: string
   label: string
   icon: string
 }
 
 export const STATS: StatItem[] = [
   {
-    value: 16,
-    suffix: ' Weeks',
-    label: 'Structured programme',
-    icon: 'https://framerusercontent.com/images/wL3gFGdvFKnBDEAtALgd21nxY.png',
+    title: 'Listen',
+    label: 'Engage leadership, faculty, learners, employers and support teams.',
+    icon: listenIcon,
   },
   {
-    value: 5,
-    suffix: '+',
-    label: 'Areas of employability development',
+    title: 'Understand',
+    label: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
     icon: 'https://framerusercontent.com/images/KFODyDPMf85CInVsmz95yO4c.png',
   },
   {
-    value: 100,
-    suffix: '%',
-    label: 'Skills-focused learning',
+    title: 'Validate',
+    label: 'Cross-check findings with available institutional evidence and context.',
+    icon: 'https://framerusercontent.com/images/s31aqBKTKv0nAkB6APEyx26maY.png',
+  },
+  {
+    title: 'Improve',
+    label: 'Translate insights into focused, practical institutional priorities.',
     icon: 'https://framerusercontent.com/images/pkRgS6EqUrjkbv3C1CJ7RRwj4.png',
   },
   {
-    value: 1,
-    suffix: '',
-    label: 'Standard AERS framework',
-    icon: 'https://framerusercontent.com/images/s31aqBKTKv0nAkB6APEyx26maY.png',
+    title: 'Evolve',
+    label: 'Review progress, learn continuously and strengthen the system over time.',
+    icon: 'https://framerusercontent.com/images/wL3gFGdvFKnBDEAtALgd21nxY.png',
   },
 ]
 
@@ -197,42 +206,42 @@ export const OTHER_FEATURES = [
 
 export const WHY_FEATURES = [
   {
-    title: 'AI-First Approach',
-    desc: 'Learn how to use tools like ChatGPT, Notion, and Zapier to run your business smarter.',
-    img: 'https://framerusercontent.com/images/JiXOtExupcESVTOpPzsuc4qlU.png?scale-down-to=1024',
+    title: 'Listen',
+    desc: 'Engage leadership, faculty, learners, employers and support teams.',
+    img: listenFeatureImg,
   },
   {
-    title: 'Plug & play templates',
-    desc: 'Get access to ready to use funnels, scripts and workflows.',
+    title: 'Understand',
+    desc: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
     img: 'https://framerusercontent.com/images/Bd0e897JJbD4ONh9FbDvVrSsM.png?scale-down-to=1024',
   },
   {
-    title: 'Real Results',
-    desc: 'Built by a coach who’s done it not just taught it.',
-    img: 'https://framerusercontent.com/images/1Ht1iGKf3E0B9evxzgmQiWUgEf0.png?scale-down-to=1024',
+    title: 'Validate',
+    desc: 'Cross-check findings with available institutional evidence and context.',
+    img: validateFeatureImg,
   },
   {
-    title: 'Zero Audience Needed',
-    desc: 'No followers? No problem. This system works even if you\u2019re starting from zero.',
-    img: 'https://framerusercontent.com/images/Ir6SlVds2Xm6vfnFOzR1miwGA.png?scale-down-to=1024',
+    title: 'Improve',
+    desc: 'Translate insights into focused, practical institutional priorities.',
+    img: studentsImg,
   },
 ] as const
 
 export const FIT_ITEMS = [
-  'Want to start coaching but don’t know how',
-  'Want to grow with AI, minus tech stress',
-  'Done chasing followers for results',
-  'Ready to monetize your expertise',
-  'Need a clear roadmap from zero',
+  'Baseline assessment',
+  'Stakeholder inputs',
+  'Gap identification',
+  'Priority profile',
 ] as const
 
-export const NOT_FIT_ITEMS = [
-  'Expect overnight success without effort',
-  'Unwilling to take action or implement',
-  'Believe coaching needs a big following',
-  'Not ready to act after the masterclass',
-  'Avoid AI or new tools',
+export const TRANSFORM_ITEMS = [
+  'Personalised pathway',
+  'Active learning & practice',
+  'Weekly guided review',
+  'Evidence & resubmission',
 ] as const
+
+export const NOT_FIT_ITEMS = TRANSFORM_ITEMS
 
 export interface Testimonial {
   name: string
@@ -296,23 +305,27 @@ export const TESTIMONIALS_ROW2: Testimonial[] = [
 
 export const FAQS = [
   {
-    q: 'Do I need to be tech savvy to join?',
-    a: 'Not at all. The tools are beginner-friendly, and everything is explained step-by-step.',
+    q: 'What is AERS?',
+    a: 'AERS is an employability ecosystem designed to help students explore their strengths, develop relevant skills, and build evidence for their future careers.',
   },
   {
-    q: 'Is this a live or recorded session?',
-    a: 'It’s a recorded masterclass you can watch anytime, at your own pace.',
+    q: 'How does the AERS journey work?',
+    a: 'AERS guides students through Explore → Transform → Evidence, helping them move from self-discovery to skill development and demonstrated capability.',
   },
   {
-    q: 'Will I get templates and tools?',
-    a: 'Yes — you’ll receive plug-and-play templates, AI workflows, and funnel scripts.',
+    q: 'Is AERS only for students?',
+    a: 'No. AERS connects students, educators, institutions, and employers to create a stronger employability ecosystem.',
   },
   {
-    q: 'What if I don’t have a niche yet?',
-    a: 'We’ll show you how to find and validate your niche using AI tools.',
+    q: 'What do students gain from AERS?',
+    a: 'Students gain clearer career direction, practical development pathways, and evidence of their skills and progress.',
   },
   {
-    q: 'Is this suitable for experienced coaches?',
-    a: 'Absolutely. Even seasoned coaches can benefit from the automation and scaling strategies.',
+    q: 'How does AERS help institutions?',
+    a: 'AERS helps institutions understand student progress, strengthen employability development, and continuously improve their support systems.',
+  },
+  {
+    q: 'How does AERS connect with employers?',
+    a: 'AERS helps translate student development into meaningful evidence, making it easier to connect emerging talent with employer needs.',
   },
 ] as const

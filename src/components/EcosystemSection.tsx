@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Landmark, GraduationCap, Briefcase, Award } from 'lucide-react'
 import { Reveal, EASE } from './shared/Reveal'
+import { SectionHeading } from './shared/ui'
 import asvLogo from '../assets/logos/asv-logo.png'
 import aersLogo from '../assets/logos/aers-logo.png'
 
@@ -146,7 +147,7 @@ function CurveArrow({ className = '', flip = false }: { className?: string; flip
 
 export function EcosystemSection() {
   return (
-    <section id="aers-ecosystem" className="relative overflow-hidden px-5 pb-24 pt-20 dt:px-0 dt:pb-[140px] dt:pt-[120px]">
+    <section id="aers-ecosystem" className="relative overflow-hidden px-5 pb-12 pt-20 dt:px-0 dt:pb-[60px] dt:pt-[120px]">
       {/* Caveat handwriting font for annotations */}
       <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 
@@ -187,34 +188,19 @@ export function EcosystemSection() {
             </span>
             <span
               className="whitespace-nowrap text-ink"
-              style={{ fontSize: '13px', lineHeight: '16.8px', letterSpacing: '0.14em', fontWeight: 600 }}
+              style={{ fontSize: '13px', lineHeight: '16.8px', letterSpacing: '0.04em', fontWeight: 600 }}
             >
-              THE AERS ECOSYSTEM
+              The ASV Employability Ecosystem
             </span>
           </span>
         </Reveal>
 
-        {/* ============ Headline — two lines, gradient accent on line 2 ============ */}
-        <Reveal delay={0.15} className="mt-8">
-          <h2
-            className="text-center font-display tracking-[-0.05em] text-ink-2"
-            style={{ fontSize: 'clamp(38px, 5.4vw, 64px)', lineHeight: 'clamp(46px, 6vw, 74px)', fontWeight: 500 }}
-          >
-            A Connected Ecosystem for
-            <br />
-            <span
-              style={{
-                background: 'linear-gradient(100deg, #2D86FC 8%, #081E5D 92%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                color: 'transparent',
-                fontWeight: 600,
-              }}
-            >
-              Greater Graduate Readiness
-            </span>
-          </h2>
+        {/* ============ Headline ============ */}
+        <Reveal delay={0.15} className="mt-8 text-center">
+          <SectionHeading className="text-center">
+            One connected system for{' '}
+            <span className="text-[#2D86FC]">measurable graduate readiness.</span>
+          </SectionHeading>
         </Reveal>
 
         {/* ============ Supporting paragraph ============ */}
@@ -223,8 +209,8 @@ export function EcosystemSection() {
             className="max-w-[620px] text-center text-gray-1"
             style={{ fontSize: '18px', lineHeight: '27px', letterSpacing: '-0.36px', fontWeight: 500 }}
           >
-            ASV Education designs the framework, AERS delivers it, and three
-            stakeholder groups turn it into measurable readiness.
+            ASV creates the employability ecosystem. AERS applies it. Institutions,
+            learners and employers turn it into measurable readiness.
           </p>
         </Reveal>
 
@@ -240,18 +226,24 @@ export function EcosystemSection() {
           >
             <img src={asvLogo} alt="ASV Education logo" className="h-[86px] w-auto shrink-0 object-contain" />
             <span className="hidden h-16 w-px bg-blue/10 tb:block" aria-hidden />
-            <p
-              className="max-w-[520px] text-gray-1"
-              style={{ fontSize: '19px', lineHeight: '28px', letterSpacing: '-0.38px', fontWeight: 500 }}
-            >
-              Designs the employability framework and ecosystem
-            </p>
+            <div className="flex flex-col gap-1 max-w-[540px]">
+              <span className="text-[#2D86FC] text-[13px] font-semibold tracking-wider uppercase tb:hidden">
+                LEVEL 01 — ECOSYSTEM
+              </span>
+              <h3 className="font-display text-ink-2 text-[20px] tb:text-[22px] font-semibold">ASV Education</h3>
+              <p
+                className="text-gray-1"
+                style={{ fontSize: '16px', lineHeight: '25px', letterSpacing: '-0.38px', fontWeight: 450 }}
+              >
+                Defines the employability philosophy, framework, evidence principles and stakeholder ecosystem.
+              </p>
+            </div>
             <span
               className="ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-blue/15 bg-blue/[0.06] px-5 py-2.5 tb:flex"
             >
               <span className="h-2 w-2 rounded-full bg-blue" />
               <span className="text-ink" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
-                LEVEL 01 — DESIGN
+                LEVEL 01 — ECOSYSTEM
               </span>
             </span>
           </motion.div>
@@ -277,16 +269,24 @@ export function EcosystemSection() {
             transition={{ delay: 0.35, duration: 2, ease: EASE }}
             whileHover={{ y: -4 }}
           >
-            <img src={aersLogo} alt="AERS — Flagship Programme logo" className="relative h-[86px] w-auto shrink-0 object-contain brightness-0 invert" />
+            <img src={aersLogo} alt="AERS logo" className="relative h-[86px] w-auto shrink-0 object-contain brightness-0 invert" />
             <span className="relative hidden h-16 w-px bg-white/20 tb:block" aria-hidden />
-            <p className="relative max-w-[520px] text-white/90" style={{ fontSize: '19px', lineHeight: '28px', letterSpacing: '-0.38px', fontWeight: 500 }}>
-              Applies the framework through <span className="text-[#2D86FC] font-semibold">Explore</span> and{' '}
-              <span className="text-[#2D86FC] font-semibold">Transform</span>
-            </p>
+            <div className="relative flex flex-col gap-1 max-w-[540px]">
+              <span className="text-[#2D86FC] text-[13px] font-semibold tracking-wider uppercase tb:hidden">
+                LEVEL 02 — FLAGSHIP SYSTEM
+              </span>
+              <h3 className="font-display text-white text-[20px] tb:text-[22px] font-semibold">AERS</h3>
+              <p
+                className="text-white/90"
+                style={{ fontSize: '16px', lineHeight: '25px', letterSpacing: '-0.38px', fontWeight: 450 }}
+              >
+                Applies the framework through Explore, personalised development, structured Transform delivery, evidence and continuous improvement.
+              </p>
+            </div>
             <span className="relative ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 tb:flex">
               <span className="h-2 w-2 rounded-full bg-teal" />
               <span className="text-white" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
-                LEVEL 02 — DELIVER
+                LEVEL 02 — FLAGSHIP SYSTEM
               </span>
             </span>
           </motion.div>
@@ -305,9 +305,21 @@ export function EcosystemSection() {
         {/* ============ Level 3 — three large stakeholder cards ============ */}
         <div className="grid w-full grid-cols-1 gap-7 tb:grid-cols-3 dt:gap-9">
           {[
-            { icon: Landmark, title: 'Institutions', desc: 'Provide context and enable implementation' },
-            { icon: GraduationCap, title: 'Learners', desc: 'Build skills and submit verified evidence' },
-            { icon: Briefcase, title: 'Employers', desc: 'Contribute workplace expectations and exposure' },
+            {
+              icon: Landmark,
+              title: 'Institutions',
+              desc: 'Provide context, enable implementation and use evidence to strengthen readiness.',
+            },
+            {
+              icon: GraduationCap,
+              title: 'Learners',
+              desc: 'Build capability, practise, improve and submit traceable evidence of readiness.',
+            },
+            {
+              icon: Briefcase,
+              title: 'Employers',
+              desc: 'Contribute workplace expectations, industry insight, exposure and talent connection.',
+            },
           ].map((row, i) => (
             <motion.div
               key={row.title}
@@ -350,10 +362,10 @@ export function EcosystemSection() {
           <CurveArrow className="left-[6%] top-1/2 -translate-y-1/2" />
         </div>
 
-        {/* ============ Level 4 — SHARED OUTCOME (Gold accent card) ============ */}
+        {/* ============ Level 4 — SHARED OUTCOME (White card with Gold border) ============ */}
         <Reveal delay={0.85} className="w-full">
           <motion.div
-            className="relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-[32px] bg-gradient-to-r from-[#D4A017] to-[#B8860B] px-9 py-10 text-center shadow-[0_24px_60px_rgba(212,160,23,0.30)] tb:flex-row tb:justify-center tb:gap-7 tb:py-12 text-white"
+            className="relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-[32px] bg-white border-2 border-[#D4A017] px-9 py-10 text-center shadow-[0_20px_50px_rgba(212,160,23,0.12)] tb:flex-row tb:justify-center tb:gap-7 tb:py-11"
             initial={{ opacity: 0.001, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
@@ -361,19 +373,19 @@ export function EcosystemSection() {
             whileHover={{ y: -4 }}
           >
             <span
-              className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/20"
+              className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#D4A017]/10 border border-[#D4A017]/20"
             >
-              <Award className="h-7 w-7 text-white" strokeWidth={1.8} />
+              <Award className="h-7 w-7 text-[#D4A017]" strokeWidth={1.8} />
             </span>
             <span
-              className="relative font-display text-white"
-              style={{ fontSize: 'clamp(20px, 2.2vw, 25px)', lineHeight: 'clamp(27px, 2.6vw, 33px)', letterSpacing: '0.08em', fontWeight: 700 }}
+              className="relative font-display text-[#B8860B]"
+              style={{ fontSize: 'clamp(19px, 2vw, 23px)', lineHeight: 'clamp(26px, 2.4vw, 31px)', letterSpacing: '0.08em', fontWeight: 700 }}
             >
               SHARED OUTCOME
             </span>
-            <span className="relative hidden h-7 w-px bg-white/30 tb:block" aria-hidden />
-            <span className="relative text-white/95" style={{ fontSize: '18px', lineHeight: '26px', letterSpacing: '-0.36px', fontWeight: 500 }}>
-              Measurable improvement and evidence-backed readiness
+            <span className="relative hidden h-7 w-px bg-[#D4A017]/30 tb:block" aria-hidden />
+            <span className="relative text-ink-2" style={{ fontSize: '18px', lineHeight: '26px', letterSpacing: '-0.36px', fontWeight: 500 }}>
+              Measurable improvement and evidence-backed employment readiness.
             </span>
           </motion.div>
         </Reveal>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Star, TrendingUp, Users, GraduationCap, BadgeCheck, Play, Sparkles, Briefcase } from 'lucide-react'
+import { Star, TrendingUp, Users, GraduationCap, Sparkles } from 'lucide-react'
 import { EASE } from './shared/Reveal'
 import centerImg from '../assets/hero/center.jpg'
 import left1Img from '../assets/hero/left-1.jpg'
@@ -109,81 +109,54 @@ export function HeroCollage() {
       />
 
       {/* ================= floating glass stat chips ================= */}
-      {/* rating — left of center (moves to left edge on mobile) */}
-      <FloatCard className="left-[17%] top-[15%] z-30 max-[809px]:left-[2%] max-[809px]:top-[30%]" delay={0.8}>
-        <IconTile><Star className="h-[18px] w-[18px] fill-gold text-gold" /></IconTile>
+      {/* 1. Top-left: ⭐ Student Progress */}
+      <FloatCard className="left-[12%] dt:left-[14%] top-[12%] z-30 max-[809px]:left-[2%] max-[809px]:top-[25%]" delay={0.8}>
+        <IconTile><Star className="h-[18px] w-[18px] fill-[#F5A623] text-[#F5A623]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[15px] font-semibold leading-tight text-ink">4.9/5 Rating</span>
-          <span className="text-[12px] leading-tight text-gray-1">150+ reviews</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Student Progress</span>
+          <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Skills & development tracked</span>
         </div>
       </FloatCard>
 
-      {/* learners — right of center (moves to right edge on mobile, no collision) */}
-      <FloatCard className="right-[16%] top-[13%] z-30 max-[809px]:right-[2%] max-[809px]:top-[6%]" delay={0.9}>
-        <IconTile><Users className="h-[18px] w-[18px] text-blue" /></IconTile>
+      {/* 2. Top-right: 👥 Learner Insights */}
+      <FloatCard className="right-[12%] dt:right-[13%] top-[10%] z-30 max-[809px]:right-[2%] max-[809px]:top-[6%]" delay={0.9}>
+        <IconTile><Users className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[15px] font-semibold leading-tight text-ink">2,500+</span>
-          <span className="text-[12px] leading-tight text-gray-1">Members trained</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Learner Insights</span>
+          <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Understand student strengths</span>
         </div>
       </FloatCard>
 
-      {/* employment chip — left-mid */}
-      <FloatCard className="left-[23%] top-[56%] z-40 hidden tb:flex" delay={1.0}>
-        <IconTile><Briefcase className="h-[18px] w-[18px] text-blue" /></IconTile>
+      {/* 3. Middle-left: 🎓 Employability Ready */}
+      <FloatCard className="left-[14%] dt:left-[17%] top-[54%] z-40 hidden tb:flex" delay={1.0}>
+        <IconTile><GraduationCap className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[15px] font-semibold leading-tight text-ink">Employment ready</span>
-          <span className="text-[12px] leading-tight text-gray-1">Evidence-informed</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Employability Ready</span>
+          <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Evidence-informed development</span>
         </div>
       </FloatCard>
 
-      {/* success chip — right-mid */}
-      <FloatCard className="right-[22%] top-[58%] z-40 hidden tb:flex" delay={1.05}>
-        <IconTile><TrendingUp className="h-[18px] w-[18px] text-blue" /></IconTile>
+      {/* 4. Middle-right: ↗ Career Readiness */}
+      <FloatCard className="right-[14%] dt:right-[16%] top-[56%] z-40 hidden tb:flex" delay={1.05}>
+        <IconTile><TrendingUp className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[15px] font-semibold leading-tight text-ink">92% outcomes</span>
-          <span className="text-[12px] leading-tight text-gray-1">Graduate placement</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Career Readiness</span>
+          <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Skills aligned to opportunity</span>
         </div>
       </FloatCard>
 
-      {/* 3 hours chip — bottom-left */}
-      <FloatCard className="bottom-[2%] left-[26%] z-40 hidden dt:flex" delay={1.1}>
-        <IconTile><GraduationCap className="h-[18px] w-[18px] text-blue" /></IconTile>
+      {/* 5. Bottom-left: ◉ Explore → Transform → Evidence */}
+      <FloatCard className="bottom-[2%] left-[16%] dt:left-[22%] z-40 hidden tb:flex" delay={1.1}>
+        <IconTile>
+          <span className="h-3.5 w-3.5 rounded-full border-2 border-[#2D86FC] flex items-center justify-center">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2D86FC]" />
+          </span>
+        </IconTile>
         <div className="flex flex-col">
-          <span className="text-[15px] font-semibold leading-tight text-ink">3 Hours</span>
-          <span className="text-[12px] leading-tight text-gray-1">Live masterclass</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Explore → Transform → Evidence</span>
+          <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">A structured student journey</span>
         </div>
       </FloatCard>
-
-      {/* small play pill — above central card */}
-      <motion.div
-        className="absolute left-[41%] top-[2%] z-30 hidden items-center gap-2 rounded-full bg-white/90 py-2 pl-2 pr-3.5 shadow-[0_12px_30px_rgba(0,80,160,0.18)] backdrop-blur-md dt:flex"
-        initial={{ opacity: 0.001, y: 24, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1.15, duration: 1.4, ease: EASE }}
-      >
-        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white">
-          <Play className="h-3 w-3 fill-white" />
-        </span>
-        <span className="text-[13px] font-medium leading-none text-ink">Watch intro</span>
-      </motion.div>
-
-      {/* verified avatars pill — overlapping central card lower-right */}
-      <motion.div
-        className="absolute right-[31%] top-[64%] z-40 hidden items-center gap-2 rounded-full bg-white/90 py-1.5 pl-1.5 pr-3 shadow-[0_12px_30px_rgba(0,80,160,0.18)] backdrop-blur-md dt:flex"
-        initial={{ opacity: 0.001, y: 24, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1.2, duration: 1.4, ease: EASE }}
-      >
-        <span className="flex -space-x-2">
-          {[PORTRAITS[1].src, PORTRAITS[2].src, PORTRAITS[3].src].map((s, i) => (
-            <img key={i} src={s} alt="" className="h-6 w-6 rounded-full border-2 border-white object-cover" loading="lazy" />
-          ))}
-        </span>
-        <span className="flex items-center gap-1 text-[12px] font-medium leading-none text-ink">
-          <BadgeCheck className="h-3.5 w-3.5 text-blue" />
-          18K active
-        </span>
-      </motion.div>
 
       {/* ================= decorative shapes ================= */}
       <Sparkle className="left-[30%] top-[8%]" delay={1.25} />
