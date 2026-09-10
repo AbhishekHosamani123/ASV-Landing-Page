@@ -174,14 +174,11 @@ ${formData.email}`
                       className="w-full rounded-lg bg-white/95 text-ink px-3.5 py-2.5 text-sm outline-none focus:bg-white focus:ring-2 focus:ring-[#2D86FC] transition-all"
                     >
                       <option value="" disabled>Select designation</option>
+                      <option value="Leadership Members">Leadership Members</option>
+                      <option value="Principal">Principal</option>
+                      <option value="Faculty">Faculty</option>
                       <option value="Placement Officer">Placement Officer</option>
-                      <option value="Facilitator / Trainer">Facilitator / Trainer</option>
-                      <option value="Principal / Dean">Principal / Dean</option>
-                      <option value="Faculty / Dept Head">Faculty / Dept Head</option>
-                      <option value="Student">Student</option>
-                      <option value="Employer / Recruiter">Employer / Recruiter</option>
-                      <option value="Support Team">Support Team</option>
-                      <option value="Other">Other</option>
+                      <option value="Others">Others</option>
                     </select>
                   </div>
                 </div>
