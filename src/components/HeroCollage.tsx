@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Star, TrendingUp, Users, GraduationCap, Sparkles } from 'lucide-react'
+import { TrendingUp, Users, GraduationCap, Sparkles } from 'lucide-react'
 import { EASE } from './shared/Reveal'
 import centerImg from '../assets/hero/center.jpg'
 import left1Img from '../assets/hero/left-1.jpg'
@@ -109,43 +109,43 @@ export function HeroCollage() {
       />
 
       {/* ================= floating glass stat chips ================= */}
-      {/* 1. Top-left: ⭐ Student Progress */}
+      {/* 1. Top-left: ⭐ Increased Employability Rate */}
       <FloatCard className="left-[12%] dt:left-[14%] top-[12%] z-30 max-[809px]:left-[2%] max-[809px]:top-[25%]" delay={0.8}>
-        <IconTile><Star className="h-[18px] w-[18px] fill-[#F5A623] text-[#F5A623]" /></IconTile>
+        <IconTile><TrendingUp className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Student Progress</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Increase Employability Rate</span>
           <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Skills & development tracked</span>
         </div>
       </FloatCard>
 
-      {/* 2. Top-right: 👥 Learner Insights */}
+      {/* 2. Top-right: 👥 Pre-screened Candidates */}
       <FloatCard className="right-[12%] dt:right-[13%] top-[10%] z-30 max-[809px]:right-[2%] max-[809px]:top-[6%]" delay={0.9}>
         <IconTile><Users className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Learner Insights</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Pre-screened Candidates</span>
           <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Understand student strengths</span>
         </div>
       </FloatCard>
 
-      {/* 3. Middle-left: 🎓 Employability Ready */}
+      {/* 3. Middle-left: 🎓 Employability Readiness */}
       <FloatCard className="left-[14%] dt:left-[17%] top-[54%] z-40 hidden tb:flex" delay={1.0}>
         <IconTile><GraduationCap className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Employability Ready</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Employability Readiness</span>
           <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Evidence-informed development</span>
         </div>
       </FloatCard>
 
-      {/* 4. Middle-right: ↗ Career Readiness */}
+      {/* 4. Middle-right: ✦ Structured Framework */}
       <FloatCard className="right-[14%] dt:right-[16%] top-[56%] z-40 hidden tb:flex" delay={1.05}>
-        <IconTile><TrendingUp className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
+        <IconTile><Sparkles className="h-[18px] w-[18px] text-[#2D86FC]" /></IconTile>
         <div className="flex flex-col">
-          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Career Readiness</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Structured Framework</span>
           <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">Skills aligned to opportunity</span>
         </div>
       </FloatCard>
 
-      {/* 5. Bottom-left: ◉ Explore → Transform → Evidence */}
+      {/* 5. Bottom-left: ◉ Measurable Evidence */}
       <FloatCard className="bottom-[2%] left-[16%] dt:left-[22%] z-40 hidden tb:flex" delay={1.1}>
         <IconTile>
           <span className="h-3.5 w-3.5 rounded-full border-2 border-[#2D86FC] flex items-center justify-center">
@@ -153,7 +153,7 @@ export function HeroCollage() {
           </span>
         </IconTile>
         <div className="flex flex-col">
-          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Explore → Transform → Evidence</span>
+          <span className="text-[13px] dt:text-[14px] font-semibold leading-tight text-ink">Measurable Evidence</span>
           <span className="text-[11px] dt:text-[12px] leading-tight text-gray-1">A structured student journey</span>
         </div>
       </FloatCard>
