@@ -1,75 +1,22 @@
 import { motion } from 'framer-motion'
-import { Landmark, GraduationCap, Briefcase, Award } from 'lucide-react'
+import { Award } from 'lucide-react'
 import { Reveal, EASE } from './shared/Reveal'
 import { SectionHeading } from './shared/ui'
 import asvLogo from '../assets/logos/asv-logo.png'
 import aersLogo from '../assets/logos/aers-logo.png'
 
 /**
- * AERS Ecosystem — wide premium composition, immediately after the hero.
- * Reference is the visual source of truth: very light blue atmospheric
- * background, soft blue glow behind the ecosystem, large cards, generous
- * whitespace, thin blue connectors, gradient accent headline, restrained
- * handwritten annotations and dotted decorations around (not inside) cards.
- *
+ * ASV Ecosystem:
  * ASV Education (large horizontal card)
  *   ↓
- * AERS — Flagship Programme (large dark horizontal card)
- *   ↓ thin blue fan-out connectors
- * Institutions · Learners · Employers (3 large equal cards side-by-side)
- *   ↓ converge
+ * AERS — Flagship Programme (large white horizontal card with navy border)
+ *   ↓
  * SHARED OUTCOME (large wide gold-accent card)
  */
 
-const GOLD = '#D4A017'
 const BLUE = '#081E5D'
-const TEAL = '#081E5D'
 
 /* ---------- Connector lines ---------- */
-
-/** Fan-out: AERS card bottom → three stakeholder card tops. Desktop only. */
-function FanOutLines() {
-  return (
-    <svg
-      className="pointer-events-none mx-auto hidden h-[110px] w-full dt:block"
-      viewBox="0 0 1200 110"
-      preserveAspectRatio="none"
-      fill="none"
-      aria-hidden
-    >
-      <defs>
-        <marker id="eco-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0 1 8 5 0 9" stroke={BLUE} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        </marker>
-      </defs>
-      <path d="M600 6 C 600 48, 188 52, 188 100" stroke={BLUE} strokeOpacity="0.5" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow)" />
-      <path d="M600 6 L 600 100" stroke={BLUE} strokeOpacity="0.5" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow)" />
-      <path d="M600 6 C 600 48, 1012 52, 1012 100" stroke={BLUE} strokeOpacity="0.5" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow)" />
-    </svg>
-  )
-}
-
-/** Converge: three stakeholder cards → shared outcome. Desktop only. */
-function ConvergeLines() {
-  return (
-    <svg
-      className="pointer-events-none mx-auto hidden h-[110px] w-full dt:block"
-      viewBox="0 0 1200 110"
-      preserveAspectRatio="none"
-      fill="none"
-      aria-hidden
-    >
-      <defs>
-        <marker id="eco-arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0 1 8 5 0 9" stroke={GOLD} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        </marker>
-      </defs>
-      <path d="M188 6 C 188 48, 600 52, 600 100" stroke={GOLD} strokeOpacity="0.55" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow-gold)" />
-      <path d="M600 6 L 600 100" stroke={GOLD} strokeOpacity="0.55" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow-gold)" />
-      <path d="M1012 6 C 1012 48, 600 52, 600 100" stroke={GOLD} strokeOpacity="0.55" strokeDasharray="2 7" strokeWidth="1.6" markerEnd="url(#eco-arrow-gold)" />
-    </svg>
-  )
-}
 
 /** Centered soft vertical line between ASV and AERS. Desktop only. */
 function StemLine() {
@@ -81,6 +28,21 @@ function StemLine() {
       whileInView={{ opacity: 1, scaleY: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.35, duration: 1.2, ease: EASE }}
+      aria-hidden
+    />
+  )
+}
+
+/** Connector between AERS and Shared Outcome with gold transition. Desktop only. */
+function OutcomeStemLine() {
+  return (
+    <motion.span
+      className="pointer-events-none mx-auto hidden h-[76px] w-[2px] rounded-full dt:block"
+      style={{ background: 'linear-gradient(to bottom, #0F3D66, #D4A017)' }}
+      initial={{ opacity: 0.001, scaleY: 0.4 }}
+      whileInView={{ opacity: 1, scaleY: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.45, duration: 1.2, ease: EASE }}
       aria-hidden
     />
   )
@@ -292,84 +254,25 @@ export function EcosystemSection() {
           </motion.div>
         </Reveal>
 
-        {/* fan-out band with side decorations */}
-        <div className="relative w-full">
-          <FanOutLines />
-          <Annotation className="right-[1%] top-1/2 -translate-y-1/2" rotate={3}>
-            explore → transform
+        {/* connector band between AERS and Shared Outcome */}
+        <div className="relative hidden w-full dt:block">
+          <OutcomeStemLine />
+          <Annotation className="right-[2%] top-1/2 -translate-y-1/2" rotate={3}>
+            explore → transform → outcome
           </Annotation>
           <DecoDot className="left-[2%] top-1/2 -translate-y-1/2" size={7} />
           <DottedRing className="left-[5%] top-1/2 -translate-y-1/2" size={34} />
+          <CurveArrow className="right-[7%] top-1/2 -translate-y-1/2" />
         </div>
 
-        {/* ============ Level 3 — three large stakeholder cards ============ */}
-        <div className="grid w-full grid-cols-1 gap-7 tb:grid-cols-3 dt:gap-9">
-          {[
-            {
-              icon: Landmark,
-              title: 'Institutions',
-              desc: 'Provide context, enable implementation and use evidence to strengthen readiness.',
-            },
-            {
-              icon: GraduationCap,
-              title: 'Learners',
-              desc: 'Build capability, practise, improve and submit traceable evidence of readiness.',
-            },
-            {
-              icon: Briefcase,
-              title: 'Employers',
-              desc: 'Contribute workplace expectations, industry insight, exposure and talent connection.',
-            },
-          ].map((row, i) => (
-            <motion.div
-              key={row.title}
-              id={row.title.toLowerCase()}
-              className="scroll-mt-28 flex min-h-[240px] flex-col items-start gap-6 rounded-[30px] border border-blue/10 bg-white p-8 shadow-[0_18px_48px_rgba(0,80,160,0.10)]"
-              initial={{ opacity: 0.001, y: 70, scale: 0.94 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: '0px 0px -10% 0px' }}
-              transition={{ delay: 0.5 + i * 0.14, duration: 2, ease: EASE }}
-              whileHover={{ y: -5 }}
-            >
-              <span
-                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-                style={{ background: 'linear-gradient(135deg, rgba(0,153,255,0.12) 0%, rgba(30,114,128,0.16) 100%)' }}
-              >
-                <row.icon className="h-7 w-7" style={{ color: TEAL }} strokeWidth={1.7} />
-              </span>
-              <div className="flex flex-col gap-2.5">
-                <span
-                  className="font-display text-ink-2"
-                  style={{ fontSize: 'clamp(22px, 2vw, 25px)', lineHeight: 'clamp(29px, 2.4vw, 32px)', letterSpacing: '-0.03em', fontWeight: 600 }}
-                >
-                  {row.title}
-                </span>
-                <span className="text-gray-1" style={{ fontSize: '16px', lineHeight: '24px', letterSpacing: '-0.32px' }}>
-                  {row.desc}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* converge band */}
-        <div className="relative w-full">
-          <ConvergeLines />
-          <Annotation className="left-[1%] top-1/2 -translate-y-1/2" rotate={-3}>
-            what everyone gains
-          </Annotation>
-          <DecoDot className="right-[3%] top-1/2 -translate-y-1/2" size={6} />
-          <CurveArrow className="left-[6%] top-1/2 -translate-y-1/2" />
-        </div>
-
-        {/* ============ Level 4 — SHARED OUTCOME (White card with Gold border) ============ */}
-        <Reveal delay={0.85} className="w-full">
+        {/* ============ Level 3 — SHARED OUTCOME (White card with Gold border) ============ */}
+        <Reveal delay={0.5} className="w-full">
           <motion.div
             className="relative flex w-full flex-col items-center gap-5 overflow-hidden rounded-[32px] bg-white border-2 border-[#D4A017] px-9 py-10 text-center shadow-[0_20px_50px_rgba(212,160,23,0.12)] tb:flex-row tb:justify-center tb:gap-7 tb:py-11"
             initial={{ opacity: 0.001, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
-            transition={{ delay: 0.85, duration: 2, ease: EASE }}
+            transition={{ delay: 0.5, duration: 2, ease: EASE }}
             whileHover={{ y: -4 }}
           >
             <span
