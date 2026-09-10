@@ -209,27 +209,27 @@ export const OTHER_FEATURES = [
 export const WHY_FEATURES = [
   {
     title: 'Listen',
-    desc: 'Engage leadership, faculty, learners, employers and support teams.',
+    desc: 'Hear every voice and uncover real needs.',
     img: listenFeatureImg,
   },
   {
     title: 'Understand',
-    desc: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
+    desc: 'Turn insights into a clear picture of readiness.',
     img: understandFeatureImg,
   },
   {
     title: 'Validate',
-    desc: 'Cross-check findings with available institutional evidence and context.',
+    desc: 'Confirm needs and progress through reliable evidence.',
     img: validateFeatureImg,
   },
   {
     title: 'Improve',
-    desc: 'Translate insights into focused, practical institutional priorities.',
+    desc: 'Build capability through focused learning and practice.',
     img: improveFeatureImg,
   },
   {
     title: 'Evolve',
-    desc: 'Review progress, learn from what works, and continuously strengthen the system to create better outcomes over time.',
+    desc: 'Sustain progress by adapting, measuring and growing.',
     img: graduatesImg,
   },
 ] as const
