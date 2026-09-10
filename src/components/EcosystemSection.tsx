@@ -259,33 +259,33 @@ export function EcosystemSection() {
           <CurveArrow className="right-[7%] top-1/2 -translate-y-1/2" flip />
         </div>
 
-        {/* ============ Level 2 — AERS Flagship Programme (large card) ============ */}
+        {/* ============ Level 2 — AERS Flagship Programme (white card with navy border) ============ */}
         <Reveal delay={0.35} className="w-full">
           <motion.div
-            className="relative flex w-full flex-col items-start gap-7 overflow-hidden rounded-[32px] bg-navy p-8 shadow-[0_24px_64px_rgba(15,61,102,0.25)] tb:flex-row tb:items-center tb:gap-10 tb:p-11"
+            className="relative flex w-full flex-col items-start gap-7 overflow-hidden rounded-[32px] border-2 border-navy bg-white p-8 shadow-[0_24px_64px_rgba(15,61,102,0.12)] tb:flex-row tb:items-center tb:gap-10 tb:p-11"
             initial={{ opacity: 0.001, y: 60, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: '0px 0px -10% 0px' }}
             transition={{ delay: 0.35, duration: 2, ease: EASE }}
             whileHover={{ y: -4 }}
           >
-            <img src={aersLogo} alt="AERS logo" className="relative h-[86px] w-auto shrink-0 object-contain brightness-0 invert" />
-            <span className="relative hidden h-16 w-px bg-white/20 tb:block" aria-hidden />
+            <img src={aersLogo} alt="AERS logo" className="relative h-[86px] w-auto shrink-0 object-contain" />
+            <span className="relative hidden h-16 w-px bg-navy/15 tb:block" aria-hidden />
             <div className="relative flex flex-col gap-1 max-w-[540px]">
               <span className="text-[#2D86FC] text-[13px] font-semibold tracking-wider uppercase tb:hidden">
                 LEVEL 02 — FLAGSHIP SYSTEM
               </span>
-              <h3 className="font-display text-white text-[20px] tb:text-[22px] font-semibold">AERS</h3>
+              <h3 className="font-display text-ink-2 text-[20px] tb:text-[22px] font-semibold">AERS</h3>
               <p
-                className="text-white/90"
+                className="text-gray-1"
                 style={{ fontSize: '16px', lineHeight: '25px', letterSpacing: '-0.38px', fontWeight: 450 }}
               >
                 Applies the framework through Explore, personalised development, structured Transform delivery, evidence and continuous improvement.
               </p>
             </div>
-            <span className="relative ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 tb:flex">
-              <span className="h-2 w-2 rounded-full bg-teal" />
-              <span className="text-white" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
+            <span className="relative ml-auto hidden shrink-0 items-center gap-2.5 rounded-full border border-navy/15 bg-navy/[0.06] px-5 py-2.5 tb:flex">
+              <span className="h-2 w-2 rounded-full bg-navy" />
+              <span className="text-ink" style={{ fontSize: '13px', lineHeight: '17px', letterSpacing: '0.1em', fontWeight: 600 }}>
                 LEVEL 02 — FLAGSHIP SYSTEM
               </span>
             </span>

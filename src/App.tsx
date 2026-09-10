@@ -8,7 +8,6 @@ import { ComparisonSection } from './components/ComparisonSection'
 import { FeaturesSection } from './components/FeaturesSection'
 import { AudienceSection } from './components/AudienceSection'
 import { TransformJourneySection } from './components/TransformJourneySection'
-import { GuaranteeSection } from './components/GuaranteeSection'
 import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
 
@@ -16,7 +15,7 @@ import { Footer } from './components/Footer'
  * ASV site — section order:
  * Hero → About → What Changes → AERS Ecosystem → Understand First (AudienceSection) →
  * 16-Week Transform Journey → Booking → Comparison → Features (See the complete picture) →
- * Guarantee → FAQ → Footer
+ * FAQ → Footer
  */
 export default function App() {
   return (
@@ -32,7 +31,6 @@ export default function App() {
         <BookingSection />
         <ComparisonSection />
         <FeaturesSection />
-        <GuaranteeSection />
         <FAQ />
       </main>
       <Footer />

@@ -21,7 +21,7 @@ export function LearningSection() {
         <div className="flex flex-col items-center gap-4">
           <Reveal delay={0.1}>
             <SectionHeading>
-              The AERS <span className="text-[#2D86FC]">Difference</span>
+              The ASV <span className="text-[#2D86FC]">Difference</span>
             </SectionHeading>
           </Reveal>
           <Reveal delay={0.15}>

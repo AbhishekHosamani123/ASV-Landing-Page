@@ -5,9 +5,11 @@ import understandImg from '../assets/understand.png'
 import validateImg from '../assets/validate.png'
 import improveImg from '../assets/improve.png'
 import evolveImg from '../assets/evolve.png'
-import studentsImg from '../assets/students.png'
+import graduatesImg from '../assets/graduates.png'
 import listenFeatureImg from '../assets/listen-feature.png'
+import understandFeatureImg from '../assets/understand-feature.png'
 import validateFeatureImg from '../assets/validate-feature.png'
+import improveFeatureImg from '../assets/improve-feature.png'
 
 /** All content extracted verbatim from https://zono.framer.ai/ */
 
@@ -213,7 +215,7 @@ export const WHY_FEATURES = [
   {
     title: 'Understand',
     desc: 'Identify patterns, strengths, gaps and differing stakeholder perspectives.',
-    img: 'https://framerusercontent.com/images/Bd0e897JJbD4ONh9FbDvVrSsM.png?scale-down-to=1024',
+    img: understandFeatureImg,
   },
   {
     title: 'Validate',
@@ -223,7 +225,12 @@ export const WHY_FEATURES = [
   {
     title: 'Improve',
     desc: 'Translate insights into focused, practical institutional priorities.',
-    img: studentsImg,
+    img: improveFeatureImg,
+  },
+  {
+    title: 'Evolve',
+    desc: 'Review progress, learn from what works, and continuously strengthen the system to create better outcomes over time.',
+    img: graduatesImg,
   },
 ] as const
 

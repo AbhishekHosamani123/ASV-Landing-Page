@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion'
-import { Play } from 'lucide-react'
-import { ButtonFilled, ButtonOutline } from './shared/ui'
 import { EASE } from './shared/Reveal'
 import { HeroCollage } from './HeroCollage'
 
@@ -48,25 +46,6 @@ export function Hero() {
               frameworks, technology and verified evidence.
             </motion.p>
           </div>
-
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-4"
-            initial={{ opacity: 0.001, y: 80, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.3, duration: 2, ease: EASE }}
-          >
-            <ButtonFilled href="#aers-ecosystem">Explore AERS</ButtonFilled>
-            <ButtonOutline
-              href="#roadmap"
-              icon={
-                <span className="flex h-[22px] w-[22px] items-center justify-center rounded-full bg-teal/10">
-                  <Play className="h-3 w-3 fill-teal text-teal" />
-                </span>
-              }
-            >
-              See how it works
-            </ButtonOutline>
-          </motion.div>
         </div>
 
         {/* Full-width blue student collage — occupies the lower half */}

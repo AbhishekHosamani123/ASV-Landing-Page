@@ -7,28 +7,34 @@ import { WHY_FEATURES } from '../data/content'
 export function FeaturesSection() {
   const [active, setActive] = useState(0)
 
-  // Robust scroll spy to detect which of the 4 cards is closest to the focal point of viewport
+  // Scroll spy to detect active card with robust thresholding & last-card handling
   useEffect(() => {
     const handleScroll = () => {
-      const focalLine = window.innerHeight * 0.4
-      let closestIndex = 0
-      let minDistance = Infinity
+      const vh = window.innerHeight
+      const triggerLine = vh * 0.45
+      let activeIdx = 0
 
-      WHY_FEATURES.forEach((_, idx) => {
-        const el = document.getElementById(`feature-card-${idx}`)
+      for (let i = 0; i < WHY_FEATURES.length; i++) {
+        const el = document.getElementById(`feature-card-${i}`)
         if (el) {
           const rect = el.getBoundingClientRect()
-          // Calculate distance from center/focal line
-          const cardCenter = rect.top + rect.height * 0.35
-          const distance = Math.abs(cardCenter - focalLine)
-          if (distance < minDistance) {
-            minDistance = distance
-            closestIndex = idx
+          if (rect.top <= triggerLine) {
+            activeIdx = i
           }
         }
-      })
+      }
 
-      setActive(closestIndex)
+      // Check last card (Evolve): if user reaches it or it's prominently in view
+      const lastIdx = WHY_FEATURES.length - 1
+      const lastEl = document.getElementById(`feature-card-${lastIdx}`)
+      if (lastEl) {
+        const lastRect = lastEl.getBoundingClientRect()
+        if (lastRect.top <= vh * 0.65 && lastRect.bottom > 100) {
+          activeIdx = lastIdx
+        }
+      }
+
+      setActive(activeIdx)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
